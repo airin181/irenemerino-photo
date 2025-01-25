@@ -1,36 +1,24 @@
-//- estilos más específicos del proyecto
-@import './base.scss';
+//- estilos más específicos del proyector
+// Variables to be used everywhere
+@use '@styles/variables/colors' as color;
+@use '@styles/variables/images' as image;
+@use './base.scss';
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  font-weight: normal;
-}
+// Mixins
+// @use './styles/shared/mixins/media_queries';
 
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-  padding: 3px;
-}
+// Shared!
+// @import './styles/shared/animations';
+// @import './styles/shared/vue-trasition';
+// @import './styles/shared/buttons';
 
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
-}
+// Typography
+@use '@styles/variables/fonts' as font;
 
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
+// Views
+@use '@styles/views/home';
 
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
-}
+// Components
+@use '@styles/components/header/header';
+@use '@styles/components/header/burger';
+@use '@styles/components/footer/footer';

@@ -1,5 +1,8 @@
 /* color palette from <https://github.com/vuejs/theme> */
 // reglas globales, restablecer estilos predeterminados, y establecer las bases del diseño.
+@use '@styles/variables/colors' as color;
+@use '@styles/variables/fonts' as font;
+
 *,
 *::before,
 *::after {
@@ -8,17 +11,39 @@
   font-weight: normal;
 }
 
+#app {
+  display: flex;
+  font-family: font.$font-primary;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100vw;
+  min-height: 100vh; /* Ocupa toda la altura del viewport */
+  box-sizing: border-box;
+  // for responsive:
+  max-width: 100%; /* Ocupar todo el ancho en pantallas pequeñas */
+  width: 100%;
+  // transitions when bg color or transform
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
+}
+
 body {
   min-height: 100vh;
   transition:
     color 0.5s,
     background-color 0.5s;
   line-height: 1.6;
-  font-family:
-    Inter,
-    -apple-system,
-    sans-serif;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+  transition: 0.4s;
+}
+
+@media (hover: hover) {
+  a:hover {
+    // background-color: hsla(160, 100%, 37%, 0.2);
+  }
 }

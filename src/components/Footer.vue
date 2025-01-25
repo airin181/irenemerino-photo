@@ -1,3 +1,4 @@
 <template lang="pug">
-p FOOTER
+.footer
+    p footer
 </template>

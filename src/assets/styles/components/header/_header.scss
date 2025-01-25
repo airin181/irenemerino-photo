@@ -1,0 +1,22 @@
+@use '@styles/variables/colors' as color;
+@use '@styles/variables/fonts' as font;
+
+.header {
+  background-color: color.$secondary;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 3rem 0;
+  text-align: center;
+  .left,
+  .right {
+    padding-inline: 0.5rem;
+  }
+  .center {
+    .logo {
+      font-family: font.$font-primary;
+      text-transform: uppercase;
+      color: color.$dark;
+    }
+  }
+}
