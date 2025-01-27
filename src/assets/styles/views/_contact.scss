@@ -1,0 +1,8 @@
+@use '@styles/variables/colors' as color;
+
+.contact {
+  background-color: color.$primary;
+  width: 100%;
+  flex: 1;
+  overflow: auto;
+}

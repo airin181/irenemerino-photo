@@ -1,4 +1,10 @@
 {
   "welcome": "Bienvenido",
-  "hello": "Hola"
+  "hello": "Hola",
+  "nav": {
+    "home": "Inicio",
+    "gallery": "Galería",
+    "shop": "Tienda",
+    "contact": "Contacto"
+  }
 }

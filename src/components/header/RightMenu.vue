@@ -1,9 +1,10 @@
 <template lang="pug">
-    //- p(v-if='menuOpen') right MENU
-    i.mdi.mdi-instagram
+    //- p(v-if='burger.isOpen') right MENU
+    a(href="https://www.instagram.com/irenemerino_photo/", target="_blank") 
+      i.mdi.mdi-instagram
     </template>
 <script setup lang="ts">
-const props = defineProps({
-  menuOpen: { type: Boolean },
-})
+import { useBurgerStore } from '@/stores/burger'
+
+const burger = useBurgerStore()
 </script>

@@ -1,4 +1,10 @@
 {
   "welcome": "Welcome",
-  "hello": "Hello"
+  "hello": "Hello",
+  "nav": {
+    "home": "Home",
+    "gallery": "Gallery",
+    "shop": "Shop",
+    "contact": "Contact"
+  }
 }

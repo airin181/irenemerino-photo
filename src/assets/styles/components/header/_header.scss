@@ -10,13 +10,32 @@
   text-align: center;
   .left,
   .right {
+    display: flex;
+    align-self: center;
     padding-inline: 0.5rem;
   }
   .center {
+    display: flex;
+    align-self: center;
     .logo {
       font-family: font.$font-primary;
       text-transform: uppercase;
       color: color.$dark;
+    }
+  }
+  .left {
+    padding-left: 1rem;
+  }
+  .right {
+    padding-right: 1rem;
+    a {
+      i {
+        display: flex;
+        color: color.$dark;
+        &::before {
+          font-size: 1.5rem;
+        }
+      }
     }
   }
 }
