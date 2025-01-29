@@ -1,17 +1,15 @@
 <template lang="pug">
 .header(ref='header')
-    .left
-        LeftMenu
+    Menu
     .center
         RouterLink(:to="{ name: 'home'}") 
           .logo Irene Merino Photography
-    .right
-        RightMenu
+    RightSide
 BurgerMenu(:style="{ top: `${headerHeight}px` }")
 </template>
 <script setup lang="ts">
-import LeftMenu from './LeftMenu.vue'
-import RightMenu from './RightMenu.vue'
+import Menu from './Menu.vue'
+import RightSide from './RightSide.vue'
 import BurgerMenu from './BurgerMenu.vue'
 import { onMounted, ref } from 'vue'
 

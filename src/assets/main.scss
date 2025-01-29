@@ -5,7 +5,7 @@
 @use './base.scss';
 
 // Mixins
-// @use './styles/shared/mixins/media_queries';
+@use './styles/mixins/media_queries';
 
 // Shared!
 // @import './styles/shared/animations';
@@ -23,5 +23,5 @@
 
 // Components
 @use '@styles/components/header/header';
-@use '@styles/components/header/burger';
+@use '@styles/components/header/menu';
 @use '@styles/components/footer/footer';

@@ -2,6 +2,7 @@
 // reglas globales, restablecer estilos predeterminados, y establecer las bases del diseño.
 @use '@styles/variables/colors' as color;
 @use '@styles/variables/fonts' as font;
+@use '@styles/mixins/media_queries' as mixin;
 
 *,
 *::before,
@@ -42,8 +43,26 @@ a {
   transition: 0.4s;
 }
 
+li {
+  list-style: none;
+}
+
 @media (hover: hover) {
   a:hover {
     // background-color: hsla(160, 100%, 37%, 0.2);
+  }
+}
+
+.show-mobile {
+  display: block;
+  @include mixin.respond(md) {
+    display: none;
+  }
+}
+
+.hide-mobile {
+  display: none;
+  @include mixin.respond(md) {
+    display: block;
   }
 }

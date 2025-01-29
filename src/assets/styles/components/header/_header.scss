@@ -8,26 +8,27 @@
   width: 100%;
   padding: 3rem 0;
   text-align: center;
-  .left,
+  .menu,
   .right {
     display: flex;
     align-self: center;
-    padding-inline: 0.5rem;
+    // padding-inline: 0.5rem;
   }
   .center {
     display: flex;
     align-self: center;
+    width: 40%;
+    justify-content: center;
     .logo {
       font-family: font.$font-primary;
       text-transform: uppercase;
       color: color.$dark;
     }
   }
-  .left {
-    padding-left: 1rem;
-  }
   .right {
+    width: calc(30% - 1rem);
     padding-right: 1rem;
+    justify-content: end;
     a {
       i {
         display: flex;
