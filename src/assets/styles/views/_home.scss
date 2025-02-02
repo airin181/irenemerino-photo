@@ -1,8 +1,27 @@
 @use '@styles/variables/colors' as color;
+@use '@styles/variables/images' as image;
 
 .home {
-  background-color: color.$primary;
+  background-color: color.$white;
   width: 100%;
   flex: 1;
   overflow: auto;
+  .parallax {
+    /* The image used */
+    // background-image: url('@images/photos/img_parallax_1.jpg');
+    background-image: url('#{image.$img-parallax-1}');
+
+    /* Set a specific height */
+    min-height: 500px;
+    width: 95%;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  section {
+    padding: 1rem 2rem;
+  }
 }

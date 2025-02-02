@@ -6,6 +6,7 @@ ul.menu-list {
   gap: 1rem;
   list-style: none;
   text-transform: uppercase;
+  padding: 0;
   a {
     color: color.$dark;
     text-decoration: none;
@@ -19,7 +20,7 @@ ul.menu-list {
 }
 .menu {
   justify-content: start;
-  padding-left: 1rem;
+  // padding-left: 1rem;
   width: calc(30% - 1rem);
   .burger-wrapper {
     .burger-button {
