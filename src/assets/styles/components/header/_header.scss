@@ -2,7 +2,7 @@
 @use '@styles/variables/fonts' as font;
 
 .header {
-  background-color: color.$secondary;
+  background-color: color.$white;
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -35,7 +35,7 @@
         display: flex;
         color: color.$dark;
         &::before {
-          font-size: 1.5rem;
+          font-size: 1.2rem;
         }
       }
     }

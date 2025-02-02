@@ -1,6 +1,7 @@
 <template lang="pug">
-.home HOME VIEW
-    h1 {{ $t('welcome') }}
+.home.view
+    h1 HOME VIEW
+    p {{ $t('welcome') }}
     p {{ $t('hello') }}
 </template>
 <script setup lang="ts">

@@ -1,5 +1,6 @@
 <template lang="pug">
-  .shop CONTACT VIEW
+.contact.view
+  p CONTACT VIEW
   </template>
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
