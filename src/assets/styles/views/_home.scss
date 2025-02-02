@@ -7,10 +7,6 @@
   flex: 1;
   overflow: auto;
   .parallax {
-    /* The image used */
-    // background-image: url('@images/photos/img_parallax_1.jpg');
-    background-image: url('#{image.$img-parallax-1}');
-
     /* Set a specific height */
     min-height: 500px;
     width: 95%;
@@ -20,8 +16,17 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    &.parallax-1 {
+      background-image: url('#{image.$img-parallax-1}');
+    }
+    &.parallax-2 {
+      background-image: url('#{image.$img-parallax-2}');
+    }
+    &.parallax-3 {
+      background-image: url('#{image.$img-parallax-3}');
+    }
   }
   section {
-    padding: 1rem 2rem;
+    padding: 2.5rem 2rem;
   }
 }

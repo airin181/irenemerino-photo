@@ -16,4 +16,8 @@ export default defineConfig({
       '@images': path.resolve(__dirname, 'src/assets/images'),
     },
   },
+  base: '/irenemerino-photo/', // Asegúrate de usar el nombre correcto del repositorio
+  build: {
+    outDir: 'dist', // La carpeta donde se generará el build
+  },
 })
