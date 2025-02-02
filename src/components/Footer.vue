@@ -2,7 +2,7 @@
 .footer
     section.claimer
         h3.title ¿TE INTERESA MI TRABAJO?
-        RouterLink(:to="{name: shop}")  compra argo shiqui
+        RouterLink.btn(:to="{ name: 'shop' }") compra argo shiqui
     section.rr-ss
         a(href="https://www.instagram.com/irenemerino_photo/", target="_blank") 
             i.mdi.mdi-instagram

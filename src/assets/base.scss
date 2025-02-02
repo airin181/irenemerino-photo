@@ -95,7 +95,22 @@ li {
   padding: 1rem 1.5rem;
   border-width: unset;
   background-color: unset;
-  border-radius: 0.5rem;
+  border-radius: 0.2rem;
   cursor: pointer;
   width: fit-content;
+  border: 2px solid color.$dark;
+  color: color.$dark;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  &:hover {
+    background-color: color.$dark;
+    color: color.$white;
+  }
+}
+i {
+  display: flex;
+  color: color.$dark;
+  &::before {
+    font-size: 1.2rem;
+  }
 }
