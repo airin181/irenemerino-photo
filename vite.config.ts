@@ -13,6 +13,7 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url)),
 
       '@styles': path.resolve(__dirname, 'src/assets/styles'),
+      '@images': path.resolve(__dirname, 'src/assets/images'),
     },
   },
 })

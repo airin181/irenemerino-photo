@@ -8,7 +8,7 @@ export type I18nMessages = typeof es
 
 const i18n = createI18n({
   legacy: false, // Usamos la API de Composition de Vue 3
-  locale: 'es', // Idioma por defecto
+  locale: localStorage.getItem('currentLang') || 'es', // Idioma por defecto
   messages: {
     es,
     en,

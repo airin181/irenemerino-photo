@@ -2,13 +2,15 @@
 
 //- shared menu-list
 ul.menu-list {
-  list-style: none;
   display: flex;
-  text-transform: uppercase;
   gap: 1rem;
+  list-style: none;
+  text-transform: uppercase;
+  padding: 0;
   a {
     color: color.$dark;
     text-decoration: none;
+    font-weight: 300;
     @media (hover: hover) {
       &:hover {
         color: color.$dark2;
@@ -17,32 +19,32 @@ ul.menu-list {
   }
 }
 .menu {
-  padding-left: 1rem;
-  width: calc(30% - 1rem);
   justify-content: start;
+  // padding-left: 1rem;
+  width: calc(30% - 1rem);
   .burger-wrapper {
     .burger-button {
       align-items: center;
       display: flex;
       justify-content: center;
       .burger-btn {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        width: 25px;
-        height: 20px;
         background: transparent;
         border: none;
-        padding: 0;
         cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        height: 20px;
+        justify-content: space-between;
+        padding: 0;
+        width: 25px;
         .burger-icon {
-          display: block;
-          width: 100%;
-          height: 2px;
           background-color: #333;
+          display: block;
+          height: 2px;
           transition:
             transform 0.3s ease,
             opacity 0.3s ease;
+          width: 100%;
         }
         .burger-icon.open:nth-child(1) {
           transform: translateY(10px) rotate(45deg);
@@ -60,7 +62,7 @@ ul.menu-list {
   }
   .desktop-menu {
     .menu-list {
-      font-size: 90%;
+      font-size: 0.875rem;
       @media (min-width: 768px) and (max-width: 1200px) {
         // Corregido: añadido "px"
         &.desktop {
@@ -84,11 +86,11 @@ ul.menu-list {
     transform: translateX(-100%);
   }
   .nav-menu {
-    position: absolute;
-    left: 0;
-    background-color: color.$secondary;
-    width: 100%;
+    background-color: color.$white;
     height: 100%;
+    left: 0;
+    position: absolute;
+    width: 100%;
     .menu-list {
       &.mobile {
         flex-direction: column;

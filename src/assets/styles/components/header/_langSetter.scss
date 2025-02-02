@@ -1,3 +1,5 @@
+@use '@styles/variables/colors' as color;
+
 .langs {
   display: flex;
   align-items: center;
@@ -8,6 +10,7 @@
     top: 30px;
     li {
       button {
+        color: color.$dark;
         padding: 0;
         border-width: unset;
         border: none;
@@ -20,15 +23,26 @@
       }
     }
   }
-  i {
+  .setter {
     cursor: pointer;
     text-transform: uppercase;
     font-style: normal;
     display: flex;
     flex-direction: row;
-    // &:hover {
-    //   text-decoration: underline;
-    //   margin-bottom: 0.2rem;
-    // }
+    align-items: center;
+    color: color.$dark;
+    p {
+      font-size: 0.875rem;
+    }
+    i {
+      transition: transform 0.5s;
+      &.open {
+        transform: rotate(-180deg);
+      }
+      // &:hover {
+      //   text-decoration: underline;
+      //   margin-bottom: 0.2rem;
+      // }
+    }
   }
 }
