@@ -54,15 +54,13 @@ li {
 }
 
 .show-mobile {
-  display: block;
   @include mixin.respond(md) {
-    display: none;
+    display: none !important;
   }
 }
 
 .hide-mobile {
-  display: none;
-  @include mixin.respond(md) {
-    display: block;
+  @include mixin.respond-max(md) {
+    display: none !important;
   }
 }
