@@ -20,15 +20,21 @@
       }
     }
   }
-  i {
+  .setter {
     cursor: pointer;
     text-transform: uppercase;
     font-style: normal;
     display: flex;
     flex-direction: row;
-    // &:hover {
-    //   text-decoration: underline;
-    //   margin-bottom: 0.2rem;
-    // }
+    i {
+      transition: transform 0.5s;
+      &.open {
+        transform: rotate(-180deg);
+      }
+      // &:hover {
+      //   text-decoration: underline;
+      //   margin-bottom: 0.2rem;
+      // }
+    }
   }
 }

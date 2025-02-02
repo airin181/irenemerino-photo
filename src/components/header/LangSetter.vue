@@ -1,6 +1,7 @@
 <template lang="pug">
 .langs
-    i.mdi.mdi-chevron-down(@click='handleLangDropdown') 
+    .setter(@click='handleLangDropdown')
+        i.mdi.mdi-chevron-down(:class='{"open" : langsOpen}')
         p {{ lang.currentLang }}
     ul(v-if='langsOpen')
         li(v-if='lang.currentLang != "es"')
