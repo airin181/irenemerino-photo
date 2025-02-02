@@ -7,4 +7,26 @@
   padding: 3rem 0;
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  .claimer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .nav-menu {
+    .desktop-menu {
+      .menu-list {
+        &.desktop {
+          li {
+            a {
+              font-size: smaller;
+            }
+          }
+        }
+      }
+    }
+  }
 }

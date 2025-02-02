@@ -11,10 +11,8 @@
   font-weight: 700; /* Bold */
   font-style: normal;
 }
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&display=swap');
 
 // fonts
 $font-primary: 'Brandon Grotesque', sans-serif;
-// $font-secondary: -apple-system, blinkmacsystemfont, roboto, 'Segoe UI', helvetica, arial, sans-serif,
-//     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-// $font-mono: 'Fira Mono', monospace;
-// $font-tertiary: 'Fira Mono';
+$font-secondary: 'Crimson Pro', serif;
