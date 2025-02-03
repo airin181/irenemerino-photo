@@ -1,13 +1,11 @@
 <template lang="pug">
-Header
+NavHeader
 RouterView
 Footer
-
-
 </template>
 
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
-import Header from './components/header/Header.vue'
+import NavHeader from './components/header/NavHeader.vue'
 import Footer from './components/Footer.vue'
 </script>

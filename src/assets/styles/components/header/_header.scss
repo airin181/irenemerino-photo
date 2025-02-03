@@ -5,9 +5,10 @@
   background-color: color.$white;
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  min-height: 160px;
   padding: 3rem 2rem;
   text-align: center;
+  width: 100%;
   .menu,
   .right {
     display: flex;

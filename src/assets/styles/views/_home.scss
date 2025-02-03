@@ -8,8 +8,9 @@
   overflow: auto;
   .parallax {
     /* Set a specific height */
-    min-height: 500px;
+    min-height: 70vh;
     width: 95%;
+    margin: 0 auto;
 
     /* Create the parallax scrolling effect */
     background-attachment: fixed;

@@ -27,4 +27,10 @@ export default defineConfigWithVueTs(
     files: ['src/**/__tests__/*'],
   },
   skipFormatting,
+  {
+    rules: {
+      '@typescript-eslint/no-unused-vars': ['off'], // Desactiva completamente la regla
+      'ts-plugin(6133)': 'off', // Este error específico no es de ESLint sino de TypeScript
+    },
+  },
 )

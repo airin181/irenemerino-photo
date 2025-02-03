@@ -13,7 +13,7 @@ import RightSide from './RightSide.vue'
 import BurgerMenu from './BurgerMenu.vue'
 import { onMounted, ref } from 'vue'
 
-const headerHeight = ref(0) // Variable para almacenar la altura del header
+const headerHeight = ref(0) // Altura del header
 const header = ref<HTMLDivElement | null>(null) // Referencia al header
 
 // Obtener la altura del header cuando el componente esté montado
