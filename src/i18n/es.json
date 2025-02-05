@@ -1,10 +1,12 @@
 {
-  "welcome": "Bienvenido",
-  "hello": "Hola",
   "nav": {
     "home": "Inicio",
     "gallery": "Galería",
     "shop": "Tienda",
     "contact": "Contacto"
+  },
+  "footer": {
+    "title": "¿TE INTERESA MI TRABAJO?",
+    "button": "Visitar la tienda"
   }
 }

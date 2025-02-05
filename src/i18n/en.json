@@ -1,10 +1,12 @@
 {
-  "welcome": "Welcome",
-  "hello": "Hello",
   "nav": {
     "home": "Home",
     "gallery": "Gallery",
     "shop": "Shop",
     "contact": "Contact"
+  },
+  "footer": {
+    "title": "DO YOU LIKE MY WORK?",
+    "button": "Go to Shop"
   }
 }

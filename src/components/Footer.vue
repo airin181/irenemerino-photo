@@ -1,8 +1,8 @@
 <template lang="pug">
 .footer
     section.claimer
-        h3.title ¿TE INTERESA MI TRABAJO?
-        RouterLink.btn(:to="{ name: 'shop' }") compra argo shiqui
+        h3.title {{ $t("footer.title")}}
+        RouterLink.btn(:to="{ name: 'shop' }") {{$t("footer.button")}}
     section.rr-ss
         a(href="https://www.instagram.com/irenemerino_photo/", target="_blank") 
             i.mdi.mdi-instagram
@@ -14,4 +14,6 @@
 </template>
 <script setup lang="ts">
 import DesktopMenu from '@/components/header/DesktopMenu.vue'
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
 </script>
