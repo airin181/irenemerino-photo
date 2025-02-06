@@ -8,5 +8,11 @@
   "footer": {
     "title": "DO YOU LIKE MY WORK?",
     "button": "Go to Shop"
+  },
+  "not-found": {
+    "error-type": "404",
+    "error-name": "Page not found",
+    "error-exp": "The door is closed, but there's still so much to capture",
+    "button-text": "Back Home"
   }
 }

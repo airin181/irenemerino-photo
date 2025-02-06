@@ -1,12 +1,7 @@
-@mixin center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
+@use '@styles/mixins/media_queries' as query;
+@use '@styles/variables/colors' as color;
 
 .not-found-view {
-  //   @include center;
   z-index: 1;
   font-family: Roboto, sans-serif;
   overflow: hidden;
@@ -17,6 +12,17 @@
   .wrapper {
     width: 100vw;
     height: 100vh;
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5); /* Fondo negro semi-transparente */
+      opacity: 0; /* Por defecto no visible */
+      transition: opacity 0.3s ease;
+      opacity: 1; /* Cuando se pasa el mouse, se hace visible */
+    }
     .img-wrapper {
       position: absolute;
       z-index: 2;
@@ -24,7 +30,8 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      align-content: center;
+      overflow-x: hidden;
+      height: 100%;
     }
   }
 }
@@ -32,7 +39,6 @@
 .content {
   text-align: center;
   color: #cdd4de;
-
   z-index: 4;
   position: absolute;
   display: flex;
@@ -45,39 +51,60 @@
 
   h1 {
     font-weight: 900;
-    font-size: 10rem;
+    font-size: 5rem;
     line-height: 1;
     opacity: 0.6;
+    @include query.respond(md) {
+      font-size: 10rem;
+    }
   }
 
   h2 {
     font-weight: 700;
-    font-size: 3rem;
+    font-size: 2rem;
     opacity: 0.9;
+    @include query.respond(md) {
+      font-size: 3rem;
+    }
   }
   p {
     font-weight: 300;
-    font-size: 2rem;
+    font-size: 1rem;
     opacity: 0.7;
     margin-bottom: 1rem;
+    max-width: 70%;
+    @include query.respond(md) {
+      font-size: 2rem;
+    }
   }
 
   a {
     display: inline-block;
     font-weight: 300;
-    font-size: 12px;
+    font-size: 0.75rem;
     text-transform: uppercase;
     border: 1px solid #cdd4de;
+    color: #cdd4de;
     padding: 8px 14px;
     border-radius: 4px;
     opacity: 0.4;
     cursor: pointer;
+    &:hover {
+      background-color: #cdd4de;
+      color: color.$dark;
+    }
+    @include query.respond(md) {
+      font-size: 1rem;
+    }
   }
 }
 img {
-  width: 100%;
-  height: auto;
+  width: auto;
+  height: 100%;
   z-index: -1;
   transform: scale(1.1);
+  @include query.respond(sm) {
+    width: 100%;
+    height: auto;
+  }
 }
-//   }

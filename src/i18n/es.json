@@ -8,5 +8,11 @@
   "footer": {
     "title": "¿TE INTERESA MI TRABAJO?",
     "button": "Visitar la tienda"
+  },
+  "not-found": {
+    "error-type": "404",
+    "error-name": "Página no encontrada",
+    "error-exp": "La puerta está cerrada, pero aún hay mucho por capturar. 📸",
+    "button-text": "Volver a Inicio"
   }
 }

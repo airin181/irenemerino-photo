@@ -2,16 +2,19 @@
 .not-found-view
     .wrapper
         .img-wrapper
-            img(src='http://www.supah.it/dribbble/008/008.jpg')
+            .overlay
+            img(src='@images/photos/not-found.jpg')
         .content
-            h1 404
-            h2 Page not found
-            p I tried to catch some fog, but i mist
-            a back to home
+            h1 {{t("not-found.error-type")}}
+            h2 {{t("not-found.error-name")}}
+            p {{t("not-found.error-exp")}}
+            RouterLink(:to='{name:home}') {{t("not-found.button-text")}}
 
 </template>
 <script setup lang="ts">
 import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
 
 // Reactive variables
 const x = ref(0)
@@ -21,7 +24,7 @@ const lFollowY = ref(0)
 const friction = 1 / 30
 
 // Mouse move handler
-const handleMouseMove = (e) => {
+const handleMouseMove = (e: MouseEvent) => {
   const lMouseX = Math.max(-100, Math.min(100, window.innerWidth / 2 - e.clientX))
   const lMouseY = Math.max(-100, Math.min(100, window.innerHeight / 2 - e.clientY))
   lFollowX.value = (20 * lMouseX) / 100
@@ -34,7 +37,7 @@ const animate = () => {
   y.value += (lFollowY.value - y.value) * friction
 
   const translate = `translate(${x.value}px, ${y.value}px) scale(1.1)`
-  document.querySelector('img').style.transform = translate
+  document.querySelector('img')!.style.transform = translate
 
   window.requestAnimationFrame(animate)
 }
