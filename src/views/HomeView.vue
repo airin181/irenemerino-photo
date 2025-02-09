@@ -15,6 +15,39 @@
 </template>
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
-
+import { ref, onMounted, onBeforeUnmount } from 'vue'
 const { t } = useI18n()
+
+const parallaxSection = ref<HTMLDivElement | null>(null)
+
+const handleScroll = (event: Event) => {
+  if (parallaxSection.value) {
+    // Verifica que no sea null
+    const scrollY = window.scrollY
+    parallaxSection.value.style.backgroundPosition = `center ${scrollY * 0.3}px`
+  }
+}
+
+const handleTouchMove = (event: TouchEvent) => {
+  if (parallaxSection.value) {
+    // Verifica que no sea null
+    const touchY = event.touches[0].clientY
+    parallaxSection.value.style.backgroundPosition = `center ${touchY * 0.3}px`
+  }
+}
+
+onMounted(() => {
+  // Detectamos el tamaño de la pantalla y añadimos el evento adecuado
+  if (window.innerWidth > 768) {
+    window.addEventListener('scroll', handleScroll)
+  } else {
+    window.addEventListener('touchmove', handleTouchMove)
+  }
+})
+
+onBeforeUnmount(() => {
+  // Limpiamos los eventos cuando el componente se destruye
+  window.removeEventListener('scroll', handleScroll)
+  window.removeEventListener('touchmove', handleTouchMove)
+})
 </script>

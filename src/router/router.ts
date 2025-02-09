@@ -3,7 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import NotFound from '@/views/NotFound.vue'
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory('/irenemerino-photo/'),
   routes: [
     {
       path: '/',
