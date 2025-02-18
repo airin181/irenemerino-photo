@@ -1,1 +1,0 @@
-import{d as t,u as o,c as s,a as n,o as a}from"./index-Dy-iESZj.js";const c={class:"contact view"},l=t({__name:"ContactView",setup(r){const{t:p}=o();return(_,e)=>(a(),s("div",c,e[0]||(e[0]=[n("p",null,"CONTACT VIEW",-1)])))}});export{l as default};
