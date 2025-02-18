@@ -13,7 +13,6 @@
     margin: 0 auto;
 
     /* Create the parallax scrolling effect */
-    background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -25,6 +24,12 @@
     }
     &.parallax-3 {
       background-image: url('#{image.$img-parallax-3}');
+    }
+    &.desktop {
+      background-attachment: fixed;
+    }
+    &.mobile {
+      background-attachment: scroll;
     }
   }
   section {

@@ -20,4 +20,7 @@ export default defineConfig({
   build: {
     outDir: 'dist',
   },
+  server: {
+    allowedHosts: ['cute-lemons-brush.loca.lt', 'localhost', '0.0.0.0'],
+  },
 })
