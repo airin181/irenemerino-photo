@@ -23,8 +23,6 @@ const isMobileDevice = isMobile()
 const parallaxSection = ref<HTMLDivElement | null>(null)
 
 onMounted(() => {
-  console.log(isMobileDevice)
-
   if (window.innerWidth > 768 && isMobileDevice) {
     window.onscroll = (event: Event) => {
       if (parallaxSection.value) {
