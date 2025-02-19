@@ -14,5 +14,10 @@
     "error-name": "Página no encontrada",
     "error-exp": "La puerta está cerrada, pero aún hay mucho por capturar. 📸",
     "button-text": "Volver a Inicio"
+  },
+  "contact": {
+    "title": "¿HABLAMOS?",
+    "map": "PUEDES ENCONTRARME AQUÍ",
+    "form": "O DEJARME UN MENSAJE"
   }
 }
