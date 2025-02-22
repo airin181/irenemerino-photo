@@ -14,8 +14,7 @@
     color: color.$white;
     background-color: color.$dark;
     &:hover {
-      background-color: color.$white;
-      color: color.$dark;
+      background-color: color.$darker;
     }
   }
   &.secondary {
