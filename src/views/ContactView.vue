@@ -10,10 +10,8 @@
     section
       ContactForm
     section
+      p.p {{ $t("contact.other-contact") }}
       h3.title.email irenemerinophoto@gmail.com
-    //- section.map-side
-    //-   h3.title  {{ $t("contact.map") }}
-    //-   p.p mapa
     section
   </template>
 <script setup lang="ts">

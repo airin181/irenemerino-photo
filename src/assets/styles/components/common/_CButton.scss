@@ -9,6 +9,7 @@
   width: fit-content;
   text-transform: uppercase;
   font-size: 0.85rem;
+  min-width: 9rem;
   &.primary {
     border: 2px solid color.$dark;
     color: color.$white;

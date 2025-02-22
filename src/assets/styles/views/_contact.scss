@@ -26,11 +26,12 @@
     flex-wrap: wrap;
     align-items: center;
     flex-direction: column;
-    padding: 1rem;
+    padding: 0.5rem;
     width: 100%;
     gap: 2rem;
     @include query.respond(md) {
       font-size: 2rem;
+      padding: 1rem;
     }
     section {
       text-align: center;
