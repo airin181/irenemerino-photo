@@ -18,6 +18,23 @@
   "contact": {
     "title": "LET'S TALK",
     "map": "YOU CAN FIND ME HERE",
-    "form": "OR LEAVE A MESSAGE"
+    "form": {
+      "name": "Name",
+      "namesurname": "Name and surname",
+      "email": "Email",
+      "email-ex": "name@example.com",
+      "hear": "Where did you hear about us?",
+      "choose": "Choose...",
+      "op-social": "Social Media (Facebook, Instagram, LinkedIn, etc)",
+      "op-search": "Online Search (Google, Bing, etc.)",
+      "op-recommendation": "Recommendation",
+      "op-other": "Other",
+      "op-where": "Could you tell me where? (Optional)",
+      "op-via": "Other via",
+      "message": "Message",
+      "message-ph": "Type here your message",
+      "terms": "I agree to the terms and conditions",
+      "send": "Send"
+    }
   }
 }

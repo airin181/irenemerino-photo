@@ -2,37 +2,37 @@
 form.contact-form(@submit.prevent="submit")
     .form-group-wrapper
         .form-group
-            label.form-label(for='name') Name
-            input#name.form-input(type='text' placeholder='Name and surname', v-model='formData.name')
+            label.form-label(for='name') {{ $t("contact.form.name") }}
+            input#name.form-input(type='text' :placeholder='$t("contact.form.namesurname")', v-model='formData.name')
             .error-message(v-if='formDataErrors.name != "ok"')
                 i.fa-solid.fa-triangle-exclamation.text-danger
                 span.text-danger {{ formDataErrors.name }}
         .form-group
-            label.form-label(for='email') Email
-            input#name.form-input(type='text' placeholder='name@example.com', v-model='formData.email')
+            label.form-label(for='email') {{ $t("contact.form.email") }}
+            input#name.form-input(type='text' :placeholder='$t("contact.form.email-ex")', v-model='formData.email')
             .error-message(v-if='formDataErrors.email != "ok"')
                 i.fa-solid.fa-triangle-exclamation.text-danger
                 span.text-danger {{ formDataErrors.email }}
         
     .form-group-wrapper
         .form-group
-            label.form-label(for='vias') Where did you hear about us?
+            label.form-label(for='vias') {{ $t("contact.form.hear") }}
             select#vias.form-input(v-model='formData.via')
-                option(selected='') Choose...
-                option Social Media (Facebook, Instagram, LinkedIn, etc.)
-                option Online Search (Google, Bing, etc.)
-                option Event or Conference
-                option Other
+                option(selected='') {{ $t("contact.form.choose") }}
+                option {{ $t("contact.form.op-social") }}
+                option {{ $t("contact.form.op-search") }}
+                option {{ $t("contact.form.op-recommendation") }}
+                option {{ $t("contact.form.op-other") }}
             .error-message(v-if='formDataErrors.via != "ok"')
                 i.fa-solid.fa-triangle-exclamation.text-danger
                 span.text-danger {{ formDataErrors.via }}
         .form-group(v-if='isOtherOption')
-            label.form-label(for='otherVia')  Could you tell us where? (Optional)
-            input#otherVia.form-input(type='text' placeholder='Other via', v-model='formData.otherVia')
+            label.form-label(for='otherVia')  {{ $t("contact.form.op-where") }}
+            input#otherVia.form-input(type='text' :placeholder='$t("contact.form.op-via")', v-model='formData.otherVia')
     .form-group-wrapper
         .form-group
-            label.form-label(for='message') Message
-            textarea#message.form-input(rows='3', placeholder='Type here your message', v-model='formData.message')
+            label.form-label(for='message') {{ $t("contact.form.message") }}
+            textarea#message.form-input(rows='3', :placeholder='$t("contact.form.message-ph")', v-model='formData.message')
             .error-message(v-if='formDataErrors.message != "ok"')
                 i.fa-solid.fa-triangle-exclamation.text-danger
                 span.text-danger {{ formDataErrors.message }}
@@ -40,12 +40,12 @@ form.contact-form(@submit.prevent="submit")
         input#accept(type="checkbox" v-model="formData.accept")
         |
         |
-        p I agree to the terms and conditions
+        p {{ $t("contact.form.terms") }}
         .error-message(v-if='formDataErrors.accept != "ok"')
             i.fa-solid.fa-triangle-exclamation.text-danger
             span.text-danger {{ formDataErrors.accept }}
     .submit-wrapper
-        button.btn.btn-primary(type='submit',  @click="validateForm") Send
+        button.btn.btn-primary(type='submit',  @click="validateForm") {{ $t("contact.form.send") }}
 </template>
 <script setup lang="ts">
 // import type { ContactForm } from '@/@types/_types';

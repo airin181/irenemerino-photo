@@ -18,6 +18,23 @@
   "contact": {
     "title": "¿HABLAMOS?",
     "map": "PUEDES ENCONTRARME AQUÍ",
-    "form": "O DEJARME UN MENSAJE"
+    "form": {
+      "name": "Nombre",
+      "namesurname": "Nombre y apellido",
+      "email": "E-mail",
+      "email-ex": "nombre@ejemplo.com",
+      "hear": "¿Cómo me has conocido?",
+      "choose": "Elige...",
+      "op-social": "Redes sociales(Facebook, Instagram, LinkedIn, etc.)",
+      "op-search": "Buscadores (Google, Bing, etc.)",
+      "op-recommendation": "Recomendación de alguien conocido",
+      "op-other": "Otro",
+      "op-where": "¿Puedes indicarme cómo? (Opcional)",
+      "op-via": "Otra via",
+      "message": "Mensaje",
+      "message-ph": "Escribe aquí to mensaje",
+      "terms": "Acepto los términos y condiciones",
+      "send": "Enviar"
+    }
   }
 }
