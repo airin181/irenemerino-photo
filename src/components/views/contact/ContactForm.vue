@@ -5,13 +5,13 @@ form.contact-form(@submit.prevent="submit")
             label.form-label(for='name') {{ $t("contact.form.name") }}
             input#name.form-input(type='text' :placeholder='$t("contact.form.namesurname")', v-model='formData.name')
             .error-message(v-if='formDataErrors.name != "ok"')
-                i.fa-solid.fa-triangle-exclamation.text-danger
+  
                 span.text-danger {{ formDataErrors.name }}
         .form-group
             label.form-label(for='email') {{ $t("contact.form.email") }}
             input#name.form-input(type='text' :placeholder='$t("contact.form.email-ex")', v-model='formData.email')
             .error-message(v-if='formDataErrors.email != "ok"')
-                i.fa-solid.fa-triangle-exclamation.text-danger
+  
                 span.text-danger {{ formDataErrors.email }}
         
     .form-group-wrapper
@@ -24,7 +24,7 @@ form.contact-form(@submit.prevent="submit")
                 option {{ $t("contact.form.op-recommendation") }}
                 option {{ $t("contact.form.op-other") }}
             .error-message(v-if='formDataErrors.via != "ok"')
-                i.fa-solid.fa-triangle-exclamation.text-danger
+  
                 span.text-danger {{ formDataErrors.via }}
         .form-group(v-if='isOtherOption')
             label.form-label(for='otherVia')  {{ $t("contact.form.op-where") }}
@@ -34,23 +34,26 @@ form.contact-form(@submit.prevent="submit")
             label.form-label(for='message') {{ $t("contact.form.message") }}
             textarea#message.form-input(rows='3', :placeholder='$t("contact.form.message-ph")', v-model='formData.message')
             .error-message(v-if='formDataErrors.message != "ok"')
-                i.fa-solid.fa-triangle-exclamation.text-danger
+  
                 span.text-danger {{ formDataErrors.message }}
-    .form-group-wrapper
+    .form-group-wrapper.conditions
         input#accept(type="checkbox" v-model="formData.accept")
         |
         |
         p {{ $t("contact.form.terms") }}
         .error-message(v-if='formDataErrors.accept != "ok"')
-            i.fa-solid.fa-triangle-exclamation.text-danger
             span.text-danger {{ formDataErrors.accept }}
     .submit-wrapper
-        button.btn.btn-primary(type='submit',  @click="validateForm") {{ $t("contact.form.send") }}
+        CButton(type='submit', @click="validateForm", :text='$t("contact.form.send")', customClass='primary')
 </template>
 <script setup lang="ts">
 // import type { ContactForm } from '@/@types/_types';
 import { computed, ref } from 'vue'
+import CButton from '@/components/common/CButton.vue'
 // import FormGroup from './FormGroup.vue'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 
 const responseMessage = ref<string>('')
 const loading = ref<boolean>(false)
@@ -118,31 +121,30 @@ function validateForm() {
 
 function validateName(name: string) {
   const namePattern = /^[A-Za-zÀ-ÖØ-öø-ÿ\s'-]{2,50}$/
-  if (name === '') formDataErrors.value.name = 'Name is required'
-  else if (!namePattern.test(name)) formDataErrors.value.name = 'Please, enter a valid name'
+  if (name === '') formDataErrors.value.name = t('contact.form.name-error-1')
+  else if (!namePattern.test(name)) formDataErrors.value.name = t('contact.form.name-error-2')
   else formDataErrors.value.name = 'ok'
 }
 
 function validateEmail(email: string) {
   const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
-  if (email === '') formDataErrors.value.email = 'E-mail is required'
-  else if (!emailPattern.test(email)) formDataErrors.value.email = 'Please, enter a valid email'
+  if (email === '') formDataErrors.value.email = t('contact.form.email-error-1')
+  else if (!emailPattern.test(email)) formDataErrors.value.email = t('contact.form.email-error-2')
   else formDataErrors.value.email = 'ok'
 }
 
 function validateVia(via: string) {
-  if (via === '') formDataErrors.value.via = 'Please, choose an option'
+  if (via === '') formDataErrors.value.via = t('contact.form.hear-error')
   else formDataErrors.value.via = 'ok'
 }
 
 function validateMessage(msg: string) {
-  if (msg === '')
-    formDataErrors.value.message = 'Please, explain what your inquire is so that we can help you'
+  if (msg === '') formDataErrors.value.message = t('contact.form.message-error')
   else formDataErrors.value.message = 'ok'
 }
 
 function validateAccept(acc: boolean) {
-  if (acc === false) formDataErrors.value.accept = 'This field is required and must not be blank'
+  if (acc === false) formDataErrors.value.accept = t('contact.form.terms-error')
   else formDataErrors.value.accept = 'ok'
 }
 </script>

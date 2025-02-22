@@ -1,0 +1,30 @@
+@use '@styles/variables/colors' as color;
+.btn {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 1.5rem;
+  border-width: unset;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  width: fit-content;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  &.primary {
+    border: 2px solid color.$dark;
+    color: color.$white;
+    background-color: color.$dark;
+    &:hover {
+      background-color: color.$white;
+      color: color.$dark;
+    }
+  }
+  &.secondary {
+    border: 2px solid color.$dark;
+    color: color.$dark;
+    background-color: unset;
+    &:hover {
+      background-color: color.$dark;
+      color: color.$white;
+    }
+  }
+}

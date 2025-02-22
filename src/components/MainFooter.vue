@@ -2,7 +2,8 @@
 .footer
     section.claimer
         h3.title {{ $t("footer.title")}}
-        RouterLink.btn(:to="{ name: 'shop' }") {{$t("footer.button")}}
+        CLink(namePath='shop', :text='$t("footer.button")', customClass='btn secondary')
+        //- RouterLink.btn(:to="{ name: 'shop' }") {{$t("footer.button")}}
     section.rr-ss
         a(href="https://www.instagram.com/irenemerino_photo/", target="_blank") 
             i.mdi.mdi-instagram
@@ -15,5 +16,6 @@
 <script setup lang="ts">
 import DesktopMenu from '@/components/header/DesktopMenu.vue'
 import { useI18n } from 'vue-i18n'
+import CLink from './common/CLink.vue'
 const { t } = useI18n()
 </script>

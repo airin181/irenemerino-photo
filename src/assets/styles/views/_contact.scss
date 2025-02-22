@@ -42,6 +42,7 @@
         font-size: 0.85rem;
       }
       @include query.respond(md) {
+        max-width: 60%;
         &.email-side,
         &.map-side {
           width: 50%;

@@ -3,6 +3,8 @@
 
 .contact-form {
   width: 100%;
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.85rem;
   .form-group-wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -22,30 +24,32 @@
         margin-bottom: 0.5rem;
         color: color.$black;
         text-align: left;
-        font-size: 0.85rem;
       }
       .form-input {
-        display: block; /* Hace que el control de formulario ocupe el 100% del ancho disponible */
-        width: 100%; /* El control de formulario ocupa todo el ancho del contenedor */
-        padding: 0.375rem 0.75rem; /* Espaciado interno (padding) de 0.375rem arriba y abajo, y 0.75rem a los lados */
-        font-weight: 400; /* Peso de fuente normal (400) */
-        line-height: 1.5; /* Altura de la línea para asegurar buena legibilidad */
-        color: color.$primary; /* Color del texto en gris oscuro */
-        background-color: #fff; /* Fondo blanco para el campo de entrada */
-        border: 1px solid #ced4da; /* Borde del campo de entrada (gris claro) */
-        border-radius: 0.25rem; /* Bordes redondeados con un radio de 0.25rem */
+        display: block;
+        width: 100%;
+        padding: 0.375rem 0.75rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: color.$primary;
+        background-color: color.$white;
+        border: 1px solid #ced4da;
+        border-radius: 0.25rem;
         transition:
           border-color 0.15s ease-in-out,
-          box-shadow 0.15s ease-in-out; /* Transiciones suaves para el borde y la sombra */
+          box-shadow 0.15s ease-in-out;
         &:focus {
-          border-color: #80bdff; /* Color del borde cuando el campo está enfocado (azul claro) */
-          outline: 0; /* Elimina el contorno predeterminado del navegador */
-          box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25); /* Sombra de enfoque azul claro */
+          border-color: #80bdff;
+          outline: 0;
+          box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25);
           &:read-only {
-            background-color: #e9ecef; /* Fondo gris claro para los campos solo lectura */
-            border-color: #ced4da; /* Borde gris claro para los campos solo lectura */
-            color: #495057; /* Color de texto en gris oscuro para los campos solo lectura */
+            background-color: #e9ecef;
+            border-color: #ced4da;
+            color: #495057;
           }
+        }
+        &::placeholder {
+          font-family: 'Crimson Pro', serif;
         }
       }
       .form-input[disabled],
@@ -54,13 +58,25 @@
         opacity: 1;
       }
       .error-message {
-        display: flex;
-        gap: 1rem;
-        align-items: baseline;
+        margin-left: 0.2rem;
         .text-danger {
-          color: red;
+          color: color.$error;
         }
       }
     }
+    &.conditions {
+      gap: 0.3rem;
+      font-size: small;
+      color: color.$black;
+      padding: 0.5rem;
+      input {
+        cursor: pointer;
+      }
+    }
+  }
+  .submit-wrapper {
+    display: flex;
+    margin-top: 1rem;
+    justify-content: center;
   }
 }

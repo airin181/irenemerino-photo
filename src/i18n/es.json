@@ -32,9 +32,16 @@
       "op-where": "¿Puedes indicarme cómo? (Opcional)",
       "op-via": "Otra via",
       "message": "Mensaje",
-      "message-ph": "Escribe aquí to mensaje",
+      "message-ph": "Escribe aquí tu mensaje",
       "terms": "Acepto los términos y condiciones",
-      "send": "Enviar"
+      "send": "Enviar",
+      "name-error-1": "Escribe un nombre",
+      "name-error-2": "Por favor, introduce un nombre válido",
+      "email-error-1": "Escribe un email",
+      "email-error-2": "Por favor, introduce un email válido",
+      "hear-error": "Por favor, escoge una opción",
+      "message-error": "Ups! Parece que no has escrito nada!",
+      "terms-error": "Este campo es obligatorio"
     }
   }
 }
