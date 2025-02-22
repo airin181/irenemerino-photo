@@ -18,7 +18,9 @@
   "contact": {
     "title": "¿HABLAMOS?",
     "subtitle": "Si te has quedado con algun duda, quieres hacerme una sugerencia o simplemente quieres compartir algo o escribirme algo bonito puedes hacerlo aquí: ",
-    "other-contact": "También puedes escribirme un email",
+    "other-way-1": "También puedes escribirme un email",
+    "other-way-2": "O por Instagram",
+
     "form": {
       "name": "Nombre",
       "namesurname": "Nombre y apellido",
