@@ -1,5 +1,6 @@
 @use '@styles/variables/colors' as color;
 @use '@styles/variables/fonts' as font;
+@use '@styles/mixins/media_queries' as query;
 
 .header {
   background-color: color.$white;
@@ -12,19 +13,30 @@
   z-index: 2;
   .menu,
   .right {
-    display: flex;
     align-self: center;
-    // padding-inline: 0.5rem;
+    display: flex;
   }
   .center {
-    display: flex;
     align-self: center;
-    width: 40%;
+    display: flex;
     justify-content: center;
+    width: 40%;
     .logo {
-      font-family: font.$font-primary;
-      text-transform: uppercase;
+      align-items: center;
       color: color.$dark;
+      display: flex;
+      font-family: font.$font-primary;
+      gap: 0.3rem;
+      text-transform: uppercase;
+      @include query.respond(sm) {
+        font-size: larger;
+      }
+      i {
+        color: color.$primary;
+        &::before {
+          font-size: 1.4rem;
+        }
+      }
     }
   }
   .right {

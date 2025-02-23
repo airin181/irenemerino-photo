@@ -3,7 +3,10 @@
     Menu
     .center
         RouterLink(:to="{ name: 'home'}") 
-          .logo Irene Merino Photography
+          .logo
+            span Irene 
+            i.mdi.mdi-camera-iris
+            span Merino
     RightSide
 BurgerMenu(:style="{ top: `${headerHeight}px` }")
 </template>
