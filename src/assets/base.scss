@@ -107,9 +107,11 @@ li {
   text-transform: none;
 }
 i {
-  display: flex;
-  color: color.$dark;
-  &::before {
-    font-size: 1.2rem;
+  &.mdi {
+    display: flex;
+    color: color.$dark;
+    &::before {
+      font-size: 1rem;
+    }
   }
 }

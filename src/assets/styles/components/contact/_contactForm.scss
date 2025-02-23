@@ -13,6 +13,7 @@
       display: flex;
       flex-direction: column;
       align-items: flex-start;
+      justify-content: flex-start;
       width: 100%;
       @include query.respond(sm) {
         width: unset;
@@ -57,18 +58,25 @@
         background-color: #e9ecef;
         opacity: 1;
       }
-      .error-message {
-        margin-left: 0.2rem;
-        .text-danger {
-          color: color.$error;
-        }
+    }
+    .error-message {
+      margin-left: 0.2rem;
+      .text-danger {
+        color: color.$error;
       }
     }
     &.conditions {
-      gap: 0.3rem;
+      padding: 0.5rem;
       font-size: small;
       color: color.$black;
-      padding: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      .input-wrapper {
+        gap: 0.3rem;
+        display: flex;
+        align-items: center;
+      }
       input {
         cursor: pointer;
       }

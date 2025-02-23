@@ -9,7 +9,7 @@ form.contact-form(@submit.prevent="submit")
                 span.text-danger {{ formDataErrors.name }}
         .form-group
             label.form-label(for='email') {{ $t("contact.form.email") }}
-            input#name.form-input(type='text' :placeholder='$t("contact.form.email-ex")', v-model='formData.email')
+            input#name.form-input(type='text' :placeholder='emailPlaceholder', v-model='formData.email')
             .error-message(v-if='formDataErrors.email != "ok"')
   
                 span.text-danger {{ formDataErrors.email }}
@@ -34,13 +34,13 @@ form.contact-form(@submit.prevent="submit")
             label.form-label(for='message') {{ $t("contact.form.message") }}
             textarea#message.form-input(rows='3', :placeholder='$t("contact.form.message-ph")', v-model='formData.message')
             .error-message(v-if='formDataErrors.message != "ok"')
-  
                 span.text-danger {{ formDataErrors.message }}
     .form-group-wrapper.conditions
-        input#accept(type="checkbox" v-model="formData.accept")
-        |
-        |
-        p {{ $t("contact.form.terms") }}
+        .input-wrapper
+          input#accept(type="checkbox" v-model="formData.accept")
+          |
+          |
+          p {{ $t("contact.form.terms") }}
         .error-message(v-if='formDataErrors.accept != "ok"')
             span.text-danger {{ formDataErrors.accept }}
     .submit-wrapper
@@ -52,11 +52,16 @@ import { computed, ref } from 'vue'
 import CButton from '@/components/common/CButton.vue'
 // import FormGroup from './FormGroup.vue'
 import { useI18n } from 'vue-i18n'
+import { useLangStore } from '@/stores/lang'
 
 const { t } = useI18n()
+const lang = useLangStore()
 
 const responseMessage = ref<string>('')
 const loading = ref<boolean>(false)
+
+const emailEs = ref('nombre@ejemplo.com')
+const emailEn = ref('name@example.com')
 
 // const formData = ref<ContactForm>({
 const formData = ref({
@@ -65,7 +70,7 @@ const formData = ref({
   via: '',
   otherVia: '',
   message: '',
-  accept: false,
+  accept: null,
 })
 
 const formDataErrors = ref<Record<string, string>>({
@@ -76,14 +81,18 @@ const formDataErrors = ref<Record<string, string>>({
   accept: 'ok',
 })
 
+const emailPlaceholder = computed(() => {
+  if (lang.currentLang === 'es') return emailEs.value
+  else return emailEn.value
+})
+
 const isOtherOption = computed(() => {
-  if (formData.value.via === 'Other') return true
+  if (formData.value.via === t('contact.form.op-other')) return true
   else return false
 })
 
 const toggle = () => {
   console.log('toogle')
-
   // showModal.value = !showModal.value;
 }
 
@@ -143,8 +152,10 @@ function validateMessage(msg: string) {
   else formDataErrors.value.message = 'ok'
 }
 
-function validateAccept(acc: boolean) {
-  if (acc === false) formDataErrors.value.accept = t('contact.form.terms-error')
+function validateAccept(acc: boolean | null) {
+  console.log('acc', acc)
+  if (acc === null || false) formDataErrors.value.accept = t('contact.form.terms-error')
+  // if (acc === false)
   else formDataErrors.value.accept = 'ok'
 }
 </script>

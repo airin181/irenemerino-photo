@@ -13,8 +13,9 @@
       p.p {{ $t("contact.other-way-1") }}
       h3.title.email irenemerinophoto@gmail.com
       div
-        a.p(href="https://www.instagram.com/irenemerino_photo/", target="_blank") {{ $t("contact.other-way-2") }}
-        i.mdi.mdi-instagram
+        a.p(href="https://www.instagram.com/irenemerino_photo/", target="_blank")
+          p.p {{ $t("contact.other-way-2") }}
+          i.mdi.mdi-instagram
     section
   </template>
 <script setup lang="ts">
