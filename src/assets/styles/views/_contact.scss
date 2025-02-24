@@ -44,7 +44,6 @@
       }
       &.map {
         justify-content: center;
-        padding: 1.5rem;
         iframe {
           width: 100%;
           border-radius: 0.5rem;
@@ -76,6 +75,7 @@
         }
         &.map {
           max-width: unset;
+          padding: 1.5rem;
         }
       }
     }
