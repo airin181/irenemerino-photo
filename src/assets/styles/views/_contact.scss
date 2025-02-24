@@ -1,5 +1,6 @@
 @use '@styles/variables/colors' as color;
 @use '@styles/mixins/media_queries' as query;
+@use '@styles/variables/fonts' as font;
 
 .contact {
   width: 100%;
@@ -80,4 +81,7 @@
       }
     }
   }
+  // .swal2-title {
+  //   font-family: font.$font-primary;
+  // }
 }

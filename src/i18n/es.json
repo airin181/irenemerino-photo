@@ -44,7 +44,9 @@
       "email-error-2": "Por favor, introduce un email válido",
       "hear-error": "Por favor, escoge una opción",
       "message-error": "Ups! Parece que no has escrito nada!",
-      "terms-error": "Este campo es obligatorio"
+      "terms-error": "Este campo es obligatorio",
+      "modal-title": "Bien!",
+      "modal-text": "Tu mensaje se ha enviado"
     }
   }
 }

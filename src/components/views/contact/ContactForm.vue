@@ -5,15 +5,15 @@ form.contact-form(@submit.prevent="submit")
             label.form-label(for='name') {{ $t("contact.form.name") }}
             input#name.form-input(type='text' :placeholder='$t("contact.form.namesurname")', v-model='formData.name')
             .error-message(v-if='formDataErrors.name != "ok"')
-  
+
                 span.text-danger {{ formDataErrors.name }}
         .form-group
             label.form-label(for='email') {{ $t("contact.form.email") }}
             input#name.form-input(type='text' :placeholder='emailPlaceholder', v-model='formData.email')
             .error-message(v-if='formDataErrors.email != "ok"')
-  
+
                 span.text-danger {{ formDataErrors.email }}
-        
+
     .form-group-wrapper
         .form-group
             label.form-label(for='vias') {{ $t("contact.form.hear") }}
@@ -24,7 +24,7 @@ form.contact-form(@submit.prevent="submit")
                 option {{ $t("contact.form.op-recommendation") }}
                 option {{ $t("contact.form.op-other") }}
             .error-message(v-if='formDataErrors.via != "ok"')
-  
+
                 span.text-danger {{ formDataErrors.via }}
         .form-group(v-if='isOtherOption')
             label.form-label(for='otherVia')  {{ $t("contact.form.op-where") }}
@@ -53,6 +53,7 @@ import CButton from '@/components/common/CButton.vue'
 // import FormGroup from './FormGroup.vue'
 import { useI18n } from 'vue-i18n'
 import { useLangStore } from '@/stores/lang'
+import Swal from 'sweetalert2'
 
 const { t } = useI18n()
 const lang = useLangStore()
@@ -91,11 +92,6 @@ const isOtherOption = computed(() => {
   else return false
 })
 
-const toggle = () => {
-  console.log('toogle')
-  // showModal.value = !showModal.value;
-}
-
 async function submitForm() {
   loading.value = true
   try {
@@ -107,7 +103,11 @@ async function submitForm() {
     // const data = await response.json();
     // responseMessage.value = data.message;
     localStorage.setItem('contact-form', JSON.stringify(formData.value))
-    toggle()
+    Swal.fire({
+      title: t('contact.form.modal-title'),
+      text: t('contact.form.modal-text')!,
+      icon: 'success',
+    })
   } catch (error) {
     responseMessage.value = 'Error sending the form.'
   }
@@ -153,6 +153,7 @@ function validateMessage(msg: string) {
 }
 
 function validateAccept(acc: boolean | null) {
+  // TO FIX!!
   console.log('acc', acc)
   if (acc === null || false) formDataErrors.value.accept = t('contact.form.terms-error')
   // if (acc === false)

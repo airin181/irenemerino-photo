@@ -44,7 +44,9 @@
       "email-error-2": "Please, enter a valid email",
       "hear-error": "Please, choose an option",
       "message-error": "Upsy! It seems you forgot to text something",
-      "terms-error": "This field is required and must not be blank"
+      "terms-error": "This field is required and must not be blank",
+      "modal-title": "Great!",
+      "modal-text": "Your message has been sent"
     }
   }
 }

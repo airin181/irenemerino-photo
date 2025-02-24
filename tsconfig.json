@@ -15,5 +15,6 @@
     "noUnusedLocals": false,
     "noUnusedParameters": false,
     "allowUnusedLabels": true
-  }
+  },
+  "types": ["vue-sweetalert2"]
 }
