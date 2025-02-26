@@ -45,8 +45,11 @@
       "hear-error": "Please, choose an option",
       "message-error": "Upsy! It seems you forgot to text something",
       "terms-error": "This field is required and must not be blank",
-      "modal-title": "Great!",
-      "modal-text": "Your message has been sent"
+      "modal-title-sc": "Form Submitted Successfully! 🎉",
+      "modal-text-sc": "Thank you for reaching out! I'll get back to you as soon as possible. 😊",
+      "modal-title-err": "Ups, something went wrong 👎",
+      "modal-text-err": "Sorry for the inconvenience. Try again later or use another via",
+      "modal-confirm-btn": "Close"
     }
   }
 }

@@ -45,8 +45,11 @@
       "hear-error": "Por favor, escoge una opción",
       "message-error": "Ups! Parece que no has escrito nada!",
       "terms-error": "Este campo es obligatorio",
-      "modal-title": "Bien!",
-      "modal-text": "Tu mensaje se ha enviado"
+      "modal-title-sc": "Formulario enviado correctamente! 🎉",
+      "modal-text-sc": "Gracias por ponerte en contacto conmigo! Te responderé lo antes posible",
+      "modal-title-err": "Ups, algo ha ido mal 👎",
+      "modal-text-err": "Vuélvelo a intentar más tarde o usa otra via de contacto",
+      "modal-confirm-btn": "Cerrar"
     }
   }
 }

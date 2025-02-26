@@ -1,0 +1,7 @@
+@use '@styles/variables/fonts' as font;
+.swal2-shown {
+  font-family: font.$font-secondary;
+  h2 {
+    // color: red;
+  }
+}

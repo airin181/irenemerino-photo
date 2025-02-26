@@ -104,12 +104,19 @@ async function submitForm() {
     // responseMessage.value = data.message;
     localStorage.setItem('contact-form', JSON.stringify(formData.value))
     Swal.fire({
-      title: t('contact.form.modal-title'),
-      text: t('contact.form.modal-text')!,
+      title: t('contact.form.modal-title-sc'),
+      text: t('contact.form.modal-text-sc')!,
       icon: 'success',
+      confirmButtonText: t('contact.form.modal-confirm-btn'),
     })
   } catch (error) {
     responseMessage.value = 'Error sending the form.'
+    Swal.fire({
+      title: t('contact.form.modal-title-err'),
+      text: t('contact.form.modal-text-err')!,
+      icon: 'error',
+      confirmButtonText: t('contact.form.modal-confirm-btn'),
+    })
   }
   loading.value = false
 }
