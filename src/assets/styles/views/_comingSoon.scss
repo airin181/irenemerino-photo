@@ -1,7 +1,7 @@
 @use '@styles/mixins/media_queries' as query;
 @use '@styles/variables/colors' as color;
 
-.not-found-view {
+.coming-soon-view {
   z-index: 1;
   font-family: Roboto, sans-serif;
   overflow: hidden;
@@ -12,6 +12,7 @@
   .wrapper {
     width: 100vw;
     height: 100vh;
+    position: relative;
     .overlay {
       position: absolute;
       top: 0;
@@ -19,6 +20,8 @@
       width: 100%;
       height: 100%;
       background: rgba(0, 0, 0, 0.4); /* Fondo negro semi-transparente */
+      // transition: opacity 0.3s ease;
+      opacity: 1; /* Cuando se pasa el mouse, se hace visible */
       z-index: 10;
     }
     .img-wrapper {
@@ -82,7 +85,7 @@
       color: color.$white;
       padding: 8px 14px;
       border-radius: 4px;
-      opacity: 0.4;
+      opacity: 0.7;
       cursor: pointer;
       &:hover {
         background-color: color.$white;

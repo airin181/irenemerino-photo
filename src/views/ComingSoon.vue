@@ -1,19 +1,21 @@
 <template lang="pug">
-.not-found-view
+.coming-soon-view
     .wrapper
         .img-wrapper
             .overlay
-            img(src='@images/photos/not-found.jpg')
+            img(src='@images/photos/coming-soon.jpg')
         .content
-            h1 {{t("not-found.error-type")}}
-            h2 {{t("not-found.error-name")}}
-            p {{t("not-found.error-exp")}}
+            h1 {{t("coming-soon.error-type")}}
+            h2 {{t("coming-soon.error-name")}}
+            p {{t("coming-soon.error-exp")}}
             RouterLink(:to='{name:"home"}') {{t("not-found.button-text")}}
 
 </template>
 <script setup lang="ts">
-import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { ref, onMounted, onBeforeUnmount, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
+import router from '@/router/router'
+
 const { t } = useI18n()
 
 // Reactive variables

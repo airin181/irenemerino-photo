@@ -15,6 +15,12 @@
     "error-exp": "La puerta está cerrada, pero aún hay mucho por capturar. 📸",
     "button-text": "Volver a Inicio"
   },
+  "coming-soon": {
+    "error-type": "UPS!",
+    "error-name": "Esta vista aún no está disponible",
+    "error-exp": "Vuelve pronto para ver la imagen completa",
+    "button-text": "Back Home"
+  },
   "contact": {
     "title": "¿HABLAMOS?",
     "subtitle": "Si te has quedado con algun duda, quieres hacerme una sugerencia o simplemente quieres compartir algo o escribirme algo bonito puedes hacerlo aquí: ",

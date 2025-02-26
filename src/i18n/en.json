@@ -15,6 +15,12 @@
     "error-exp": "The door is closed, but there's still so much to capture",
     "button-text": "Back Home"
   },
+  "coming-soon": {
+    "error-type": "UPS",
+    "error-name": "This view is coming soon",
+    "error-exp": "Come back soon to see the whole picture ;)",
+    "button-text": "Back Home"
+  },
   "contact": {
     "title": "LET'S TALK",
     "subtitle": "If you have any questions, want to make a suggestion or just want to share something or write me something nice, you can do it here:",

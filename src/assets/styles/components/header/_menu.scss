@@ -11,6 +11,10 @@ ul.menu-list {
     color: color.$dark;
     text-decoration: none;
     font-weight: 300;
+    &:active,
+    &:focus {
+      text-decoration: underline;
+    }
     @media (hover: hover) {
       &:hover {
         color: color.$dark2;
