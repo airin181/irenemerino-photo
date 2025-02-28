@@ -40,6 +40,9 @@
       flex-direction: column;
       align-items: center;
       width: 100%;
+      &:not(&.map) {
+        padding-inline: 1rem;
+      }
       .email {
         font-size: 0.85rem;
       }

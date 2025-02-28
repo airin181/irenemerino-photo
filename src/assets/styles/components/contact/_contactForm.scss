@@ -4,7 +4,7 @@
 .contact-form {
   width: 100%;
   font-family: 'Crimson Pro', serif;
-  font-size: 0.85rem;
+  font-size: 1rem;
   .form-group-wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -67,7 +67,7 @@
     }
     &.conditions {
       padding: 0.5rem;
-      font-size: small;
+      font-size: 0.85rem;
       color: color.$black;
       display: flex;
       flex-direction: column;
