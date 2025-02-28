@@ -2,7 +2,7 @@
 .contact.view
   .contact-header
     .img-container
-      img(:src='image1path')
+      img(:src='imageHeader')
   .contact-body
     section
       h3.title {{ $t("contact.title") }}
@@ -23,8 +23,9 @@
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import ContactForm from '@/components/views/contact/ContactForm.vue'
+import imageHeader from '@images/photos/img-parallax-1.jpg'
 
 const { t } = useI18n()
 
-const image1path = computed(() => 'src/assets/images/photos/img-parallax-1.jpg')
+const image1path = computed(() => 'imageHeader')
 </script>

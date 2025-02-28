@@ -79,6 +79,7 @@ ul.menu-list {
   }
 }
 .burger-menu {
+  z-index: 2;
   .slide-left-enter-active,
   .slide-left-leave-active {
     transition: transform 0.3s ease;

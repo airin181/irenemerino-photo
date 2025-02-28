@@ -15,8 +15,10 @@
 import { ref, onMounted, onBeforeUnmount, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import router from '@/router/router'
+import { isMobile } from '@/utils/display'
 
 const { t } = useI18n()
+const isMobileDevice = isMobile()
 
 // Reactive variables
 const x = ref(0)
@@ -46,14 +48,18 @@ const animate = () => {
 
 // Set up event listeners and start animation on mount
 onMounted(() => {
-  window.addEventListener('mousemove', handleMouseMove)
-  window.addEventListener('click', handleMouseMove)
-  animate()
+  if (!isMobileDevice) {
+    window.addEventListener('mousemove', handleMouseMove)
+    window.addEventListener('click', handleMouseMove)
+    animate()
+  }
 })
 
 // Clean up event listeners on unmount
 onBeforeUnmount(() => {
-  window.removeEventListener('mousemove', handleMouseMove)
-  window.removeEventListener('click', handleMouseMove)
+  if (!isMobileDevice) {
+    window.removeEventListener('mousemove', handleMouseMove)
+    window.removeEventListener('click', handleMouseMove)
+  }
 })
 </script>
