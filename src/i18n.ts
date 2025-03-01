@@ -13,6 +13,7 @@ const i18n = createI18n({
     es,
     en,
   },
+  warnHtmlInMessage: false,
 })
 
 export default i18n

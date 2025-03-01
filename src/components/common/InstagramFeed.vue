@@ -12,7 +12,7 @@
           :key="image.id"
 
         )
-        video.instagram-gallery-image(v-else :key="image.id" )
+        video.instagram-gallery-image(v-else :key="image.id")
           source(:src="image.media_url" type="video/mp4")
 </template>
 <script setup lang="ts">

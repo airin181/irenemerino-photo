@@ -3,13 +3,13 @@
     .parallax.parallax-1(:class='parallaxClass')
     section.intro
         h2.title {{ t("home.img1-title")}}
-        p.p(v-html='t("home.img1-p1")')
-        p.p(v-html='t("home.img1-p2")')
-        p.p(v-html='t("home.img1-p3")')
-        p.p(v-html='t("home.img1-p4")')
-        p.p(v-html='t("home.img1-p5")')
-        p.p(v-html='t("home.img1-p6")')
-        p.p(v-html='t("home.img1-p7")')
+        p.p(v-html="txt1")
+        p.p(v-html="txt2")
+        p.p(v-html="txt3")
+        p.p(v-html="txt4")
+        p.p(v-html="txt5")
+        p.p(v-html="txt6")
+        p.p(v-html="txt7")
     .parallax.parallax-2(:class='parallaxClass')
     section.instagram
         h3.title {{t("home.title-ig")}}
@@ -19,13 +19,37 @@
 </template>
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
-import { ref, onMounted, onBeforeUnmount, computed } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import { isMobile } from '@/utils/display'
+import InstagramFeed from '@/components/common/InstagramFeed.vue'
+import DOMPurify from 'dompurify'
+
 const { t } = useI18n()
 const isMobileDevice = isMobile()
-import InstagramFeed from '@/components/common/InstagramFeed.vue'
 
 const parallaxClass = computed(() => {
   return isMobileDevice ? 'mobile' : 'desktop'
+})
+
+const txt1 = computed(() => {
+  return DOMPurify.sanitize(t('home.img1-p1'), { ALLOWED_TAGS: ['strong', 'b', 'i', 'em'] })
+})
+const txt2 = computed(() => {
+  return DOMPurify.sanitize(t('home.img1-p2'), { ALLOWED_TAGS: ['strong', 'b', 'i', 'em'] })
+})
+const txt3 = computed(() => {
+  return DOMPurify.sanitize(t('home.img1-p3'), { ALLOWED_TAGS: ['strong', 'b', 'i', 'em'] })
+})
+const txt4 = computed(() => {
+  return DOMPurify.sanitize(t('home.img1-p4'), { ALLOWED_TAGS: ['strong', 'b', 'i', 'em'] })
+})
+const txt5 = computed(() => {
+  return DOMPurify.sanitize(t('home.img1-p5'), { ALLOWED_TAGS: ['strong', 'b', 'i', 'em'] })
+})
+const txt6 = computed(() => {
+  return DOMPurify.sanitize(t('home.img1-p6'), { ALLOWED_TAGS: ['strong', 'b', 'i', 'em'] })
+})
+const txt7 = computed(() => {
+  return DOMPurify.sanitize(t('home.img1-p7'), { ALLOWED_TAGS: ['strong', 'b', 'i', 'em'] })
 })
 </script>

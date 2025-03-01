@@ -23,7 +23,7 @@
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import ContactForm from '@/components/views/contact/ContactForm.vue'
-import imageHeader from '@images/photos/img-parallax-1.jpg'
+import imageHeader from '@images/photos/img-parallax-2.jpg'
 
 const { t } = useI18n()
 
