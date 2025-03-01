@@ -1,0 +1,1 @@
+import{d as s,u as o,c as t,a as n,o as a}from"./index-CK0J0Udd.js";const p={class:"shop view"},l=s({__name:"ShopView",setup(r){const{t:c}=o();return(_,e)=>(a(),t("div",p,e[0]||(e[0]=[n("p",null,"SHOP VIEW",-1)])))}});export{l as default};
