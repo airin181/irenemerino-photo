@@ -1,0 +1,21 @@
+@use '@styles/variables/colors' as color;
+.instagram-wrapper {
+  .instagram-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    .instagram-gallery-item {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      flex: 1 0 18rem;
+      margin: 1rem;
+      color: #fff;
+      cursor: pointer;
+      .instagram-gallery-image {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+    }
+  }
+}

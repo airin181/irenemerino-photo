@@ -1,5 +1,6 @@
 @use '@styles/variables/colors' as color;
 @use '@styles/variables/images' as image;
+@use '@styles/mixins/media_queries' as mixin;
 
 .home {
   background-color: color.$white;
@@ -36,9 +37,18 @@
   section {
     padding: 2.5rem 2rem;
     &.intro {
+      .title {
+        text-align: start;
+      }
       p {
         margin-top: 1rem;
         text-align: justify;
+      }
+    }
+    &.instagram {
+      background: linear-gradient(1deg, white, color.$white);
+      .title {
+        text-align: center;
       }
     }
   }
