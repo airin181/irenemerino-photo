@@ -47,7 +47,7 @@ form.contact-form(@submit.prevent="submit")
         CButton(type='submit', @click="validateForm", :text='$t("contact.form.send")', customClass='primary')
 </template>
 <script setup lang="ts">
-// import type { ContactForm } from '@/@types/_types';
+import type { ContactForm } from '@/types/_types'
 import { computed, ref } from 'vue'
 import CButton from '@/components/common/CButton.vue'
 // import FormGroup from './FormGroup.vue'
@@ -64,8 +64,7 @@ const loading = ref<boolean>(false)
 const emailEs = ref('nombre@ejemplo.com')
 const emailEn = ref('name@example.com')
 
-// const formData = ref<ContactForm>({
-const formData = ref({
+const formData = ref<ContactForm>({
   name: '',
   email: '',
   via: '',
@@ -159,11 +158,8 @@ function validateMessage(msg: string) {
   else formDataErrors.value.message = 'ok'
 }
 
-function validateAccept(acc: boolean | null) {
-  // TO FIX!!
-  console.log('acc', acc)
+function validateAccept(acc: string | null) {
   if (acc === null || false) formDataErrors.value.accept = t('contact.form.terms-error')
-  // if (acc === false)
   else formDataErrors.value.accept = 'ok'
 }
 </script>

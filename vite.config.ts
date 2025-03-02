@@ -14,6 +14,7 @@ export default defineConfig({
 
       '@styles': path.resolve(__dirname, 'src/assets/styles'),
       '@images': path.resolve(__dirname, 'src/assets/images'),
+      '@types': path.resolve(__dirname, 'src/types'),
     },
   },
   base: '/irenemerino-photo/',
