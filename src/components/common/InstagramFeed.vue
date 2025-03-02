@@ -1,7 +1,10 @@
 <template lang="pug">
 .instagram-wrapper
-  h1(v-if="isLoading") LOADING...
-  h1(v-else-if="hasError") Ooops, something went wrong.
+  PulseLoader(v-if="isLoading")
+  .instagram-alternative.instagram-gallery(v-else-if="hasError")
+    .instagram-gallery-item(v-for="image in noInstagramImages")
+      img.instagram-gallery-image(:src='image.path')
+
   .instagram-gallery(v-else)
     .instagram-gallery-item(v-for="image in instagramData.data" :key="image.id")
       a(:href="image.permalink" :key="image.id" target="_blank" rel="noreferrer")
@@ -16,14 +19,35 @@
           source(:src="image.media_url" type="video/mp4")
 </template>
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, watch, computed } from 'vue'
 import axios from 'axios'
+import PulseLoader from 'vue-spinner/src/PulseLoader.vue'
+import img1 from '@images/photos/not-found.jpg'
+import img2 from '@images/photos/img-parallax-2.jpg'
+import img3 from '@images/photos/img-parallax-3.jpg'
 
 const apiUrl = ref<string>(`${import.meta.env.VITE_APP_API_URL}/get-instagram-feed`)
 
 const isLoading = ref<boolean>(true)
 const hasError = ref<boolean>(false)
 const instagramData = ref(null)
+
+const noInstagramImages = computed(() => {
+  return [
+    {
+      path: img1,
+      id: 'not-found',
+    },
+    {
+      path: img2,
+      id: 'img-parallax-2',
+    },
+    {
+      path: img3,
+      id: 'img-parallax-3',
+    },
+  ]
+})
 
 // Function to fetch Instagram feed
 const getInstagramFeed = async () => {

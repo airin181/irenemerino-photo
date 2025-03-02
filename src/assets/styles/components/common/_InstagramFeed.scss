@@ -1,8 +1,14 @@
 @use '@styles/variables/colors' as color;
 .instagram-wrapper {
+  display: flex;
+  justify-content: center;
+  .v-spinner {
+    padding: 4rem;
+  }
   .instagram-gallery {
     display: flex;
     flex-wrap: wrap;
+    padding-top: 1rem;
     .instagram-gallery-item {
       display: flex;
       flex-direction: column;
