@@ -9,7 +9,7 @@ form.contact-form(@submit.prevent="submit")
                 span.text-danger {{ formDataErrors.name }}
         .form-group
             label.form-label(for='email') {{ $t("contact.form.email") }}
-            input#name.form-input(type='text' :placeholder='emailPlaceholder', v-model='formData.email')
+            input#email.form-input(type='text' :placeholder='emailPlaceholder', v-model='formData.email')
             .error-message(v-if='formDataErrors.email != "ok"')
 
                 span.text-danger {{ formDataErrors.email }}
