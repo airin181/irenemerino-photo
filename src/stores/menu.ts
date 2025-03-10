@@ -16,8 +16,8 @@ export const useMenuStore = defineStore('menu', () => {
         text: t('nav.shop'),
       },
       {
-        pathName: 'gallery',
-        text: t('nav.gallery'),
+        pathName: 'projects',
+        text: t('nav.projects'),
       },
       {
         pathName: 'contact',

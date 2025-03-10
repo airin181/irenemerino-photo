@@ -1,5 +1,5 @@
 <template lang="pug">
-.gallery.view
+.projects.view
   p GALLERY VIEW
 </template>
 <script setup lang="ts">

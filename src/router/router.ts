@@ -8,10 +8,10 @@ const routes: RouteRecordRaw[] = [
     component: HomeView,
   },
   {
-    path: '/gallery',
-    name: 'gallery',
-    redirect: { name: 'coming-soon' },
-    component: () => import('@/views/GalleryView.vue'),
+    path: '/projects',
+    name: 'projects',
+    // redirect: { name: 'coming-soon' },
+    component: () => import('@/views/ProjectsView.vue'),
     children: [],
   },
   {
