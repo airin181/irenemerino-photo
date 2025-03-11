@@ -2,11 +2,9 @@
 .header(ref='header')
     Menu
     .center
-        RouterLink(:to="{ name: 'home'}") 
-          .logo
-            span Irene 
-            i.mdi.mdi-camera-iris
-            span Merino
+        RouterLink(:to="{ name: 'home'}")
+          .logo-wrapper
+            .logo
     RightSide
 BurgerMenu(:style="{ top: `${headerHeight}px` }")
 </template>

@@ -1,13 +1,14 @@
 @use '@styles/variables/colors' as color;
 @use '@styles/variables/fonts' as font;
 @use '@styles/mixins/media_queries' as query;
+@use '@styles/variables/images' as image;
 
 .header {
   background-color: color.$white;
   display: flex;
   justify-content: space-between;
   min-height: 160px;
-  padding: 3rem 2rem;
+  padding: 2rem;
   text-align: center;
   width: 100%;
   z-index: 10;
@@ -21,24 +22,34 @@
     display: flex;
     justify-content: center;
     width: 40%;
-    .logo {
-      align-items: center;
-      color: color.$black;
-      display: flex;
-      font-family: font.$font-primary;
-      gap: 0.3rem;
-      text-transform: uppercase;
-      @include query.respond(sm) {
-        letter-spacing: 8px;
-        font-size: larger;
-      }
-      i {
-        color: color.$primary;
-        &::before {
-          font-size: 1.4rem;
-        }
+    .logo-wrapper {
+      width: 10rem;
+      height: 5rem;
+      .logo {
+        background-image: url('#{image.$logo}');
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 100%;
       }
     }
+    // .logo {
+    //   align-items: center;
+    //   color: color.$black;
+    //   display: flex;
+    //   font-family: font.$font-primary;
+    //   gap: 0.3rem;
+    //   text-transform: uppercase;
+    //   @include query.respond(sm) {
+    //     letter-spacing: 8px;
+    //     font-size: larger;
+    //   }
+    //   i {
+    //     color: color.$primary;
+    //     &::before {
+    //       font-size: 1.4rem;
+    //     }
+    //   }
+    // }
   }
   .right {
     width: calc(30% - 1rem);
