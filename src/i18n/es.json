@@ -2,6 +2,8 @@
   "nav": {
     "home": "Inicio",
     "projects": "Proyectos",
+    "projects-work": "Trabajo",
+    "projects-archive": "Archivo",
     "shop": "Tienda",
     "contact": "Contacto"
   },

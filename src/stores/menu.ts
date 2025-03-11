@@ -18,6 +18,16 @@ export const useMenuStore = defineStore('menu', () => {
       {
         pathName: 'projects',
         text: t('nav.projects'),
+        subOptions: [
+          {
+            pathName: 'work',
+            text: t('nav.projects-work'),
+          },
+          {
+            pathName: 'archive',
+            text: t('nav.projects-archive'),
+          },
+        ],
       },
       {
         pathName: 'contact',

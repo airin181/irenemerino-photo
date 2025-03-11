@@ -1,6 +1,6 @@
 <template lang="pug">
 .header(ref='header')
-    Menu
+    NavMenu
     .center
         RouterLink(:to="{ name: 'home'}")
           .logo-wrapper
@@ -9,18 +9,18 @@
 BurgerMenu(:style="{ top: `${headerHeight}px` }")
 </template>
 <script setup lang="ts">
-import Menu from './Menu.vue'
-import RightSide from './RightSide.vue'
-import BurgerMenu from './BurgerMenu.vue'
-import { onMounted, ref } from 'vue'
+import NavMenu from './NavMenu.vue';
+import RightSide from './RightSide.vue';
+import BurgerMenu from './BurgerMenu.vue';
+import { onMounted, ref } from 'vue';
 
-const headerHeight = ref(0) // Altura del header
-const header = ref<HTMLDivElement | null>(null) // Referencia al header
+const headerHeight = ref(0);
+const header = ref<HTMLDivElement | null>(null);
 
-// Obtener la altura del header cuando el componente esté montado
+// Get header height when mounted
 onMounted(() => {
   if (header.value) {
-    headerHeight.value = header.value.getBoundingClientRect().height
+    headerHeight.value = header.value.getBoundingClientRect().height;
   }
-})
+});
 </script>

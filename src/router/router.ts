@@ -1,6 +1,6 @@
-import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-import NotFound from '@/views/NotFound.vue'
+import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router';
+import HomeView from '../views/HomeView.vue';
+import NotFound from '@/views/NotFound.vue';
 const routes: RouteRecordRaw[] = [
   {
     path: '/',
@@ -9,10 +9,20 @@ const routes: RouteRecordRaw[] = [
   },
   {
     path: '/projects',
-    name: 'projects',
-    // redirect: { name: 'coming-soon' },
-    component: () => import('@/views/ProjectsView.vue'),
-    children: [],
+    // name: 'projects',
+    // component: () => import('@/views/ProjectsView.vue'),
+    children: [
+      {
+        path: 'archive',
+        name: 'archive',
+        component: () => import('@/views/projects/ArchiveGallery.vue'),
+      },
+      {
+        path: 'work',
+        name: 'work',
+        component: () => import('@/views/projects/WorkGallery.vue'),
+      },
+    ],
   },
   {
     path: '/shop',
@@ -31,18 +41,18 @@ const routes: RouteRecordRaw[] = [
     name: 'coming-soon',
     component: () => import('@/views/ComingSoon.vue'),
   },
-]
+];
 const router = createRouter({
   history: createWebHistory('/irenemerino-photo/'),
   routes,
-})
+});
 
 // Unknown Routes
 const unknown = {
   path: '/:pathMatch(.*)*',
   component: NotFound,
-}
+};
 // Add Additional Routes
-router.addRoute(unknown)
+router.addRoute(unknown);
 
-export default router
+export default router;
