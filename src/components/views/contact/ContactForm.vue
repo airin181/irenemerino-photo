@@ -1,5 +1,5 @@
 <template lang="pug">
-form.contact-form(@submit.prevent="submit")
+form.contact-form(@submit.prevent="submitForm")
     .form-group-wrapper
         .form-group
             label.form-label(for='name') {{ $t("contact.form.name") }}
@@ -54,6 +54,7 @@ import CButton from '@/components/common/CButton.vue'
 import { useI18n } from 'vue-i18n'
 import { useLangStore } from '@/stores/lang'
 import Swal from 'sweetalert2'
+import { sendEmail } from '@/utils/emailService'
 
 const { t } = useI18n()
 const lang = useLangStore()
@@ -94,20 +95,20 @@ const isOtherOption = computed(() => {
 async function submitForm() {
   loading.value = true
   try {
-    // const response = await fetch('http://localhost:3000/contact', {
-    //     method: 'POST',
-    //     headers: { 'Content-Type': 'application/json' },
-    //     body: JSON.stringify(formData.value)
-    // });
+    const response = await sendEmail(formData.value)
+    localStorage.setItem('contact-form', JSON.stringify(formData.value))
+    if (response.status === 200) {
+      Swal.fire({
+        title: t('contact.form.modal-title-sc'),
+        text: t('contact.form.modal-text-sc')!,
+        icon: 'success',
+        confirmButtonText: t('contact.form.modal-confirm-btn'),
+      })
+      resetForm()
+    }
+
     // const data = await response.json();
     // responseMessage.value = data.message;
-    localStorage.setItem('contact-form', JSON.stringify(formData.value))
-    Swal.fire({
-      title: t('contact.form.modal-title-sc'),
-      text: t('contact.form.modal-text-sc')!,
-      icon: 'success',
-      confirmButtonText: t('contact.form.modal-confirm-btn'),
-    })
   } catch (error) {
     responseMessage.value = 'Error sending the form.'
     Swal.fire({
@@ -161,5 +162,23 @@ function validateMessage(msg: string) {
 function validateAccept(acc: string | null) {
   if (acc === null || false) formDataErrors.value.accept = t('contact.form.terms-error')
   else formDataErrors.value.accept = 'ok'
+}
+
+function resetForm() {
+  formData.value = {
+    name: '',
+    email: '',
+    via: '',
+    otherVia: '',
+    message: '',
+    accept: null,
+  }
+  formDataErrors.value = {
+    name: 'ok',
+    email: 'ok',
+    via: 'ok',
+    message: 'ok',
+    accept: 'ok',
+  }
 }
 </script>
