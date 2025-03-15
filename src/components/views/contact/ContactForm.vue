@@ -1,20 +1,21 @@
 <template lang="pug">
-form.contact-form(@submit.prevent="submitForm")
+form.contact-form(@submit.prevent="validateForm")
+
     .form-group-wrapper
         .form-group
             label.form-label(for='name') {{ $t("contact.form.name") }}
             input#name.form-input(type='text' :placeholder='$t("contact.form.namesurname")', v-model='formData.name')
             .error-message(v-if='formDataErrors.name != "ok"')
-
                 span.text-danger {{ formDataErrors.name }}
+
         .form-group
             label.form-label(for='email') {{ $t("contact.form.email") }}
             input#email.form-input(type='text' :placeholder='emailPlaceholder', v-model='formData.email')
             .error-message(v-if='formDataErrors.email != "ok"')
-
                 span.text-danger {{ formDataErrors.email }}
 
     .form-group-wrapper
+
         .form-group
             label.form-label(for='vias') {{ $t("contact.form.hear") }}
             select#vias.form-input(v-model='formData.via')
@@ -24,25 +25,27 @@ form.contact-form(@submit.prevent="submitForm")
                 option {{ $t("contact.form.op-recommendation") }}
                 option {{ $t("contact.form.op-other") }}
             .error-message(v-if='formDataErrors.via != "ok"')
-
                 span.text-danger {{ formDataErrors.via }}
+
         .form-group(v-if='isOtherOption')
             label.form-label(for='otherVia')  {{ $t("contact.form.op-where") }}
             input#otherVia.form-input(type='text' :placeholder='$t("contact.form.op-via")', v-model='formData.otherVia')
+
     .form-group-wrapper
         .form-group
             label.form-label(for='message') {{ $t("contact.form.message") }}
             textarea#message.form-input(rows='3', :placeholder='$t("contact.form.message-ph")', v-model='formData.message')
             .error-message(v-if='formDataErrors.message != "ok"')
                 span.text-danger {{ formDataErrors.message }}
+
     .form-group-wrapper.conditions
         .input-wrapper
-          input#accept(type="checkbox" v-model="formData.accept")
+          input#accept(type="checkbox" v-model="formData.termsAccepted")
           |
           |
           p {{ $t("contact.form.terms") }}
-        .error-message(v-if='formDataErrors.accept != "ok"')
-            span.text-danger {{ formDataErrors.accept }}
+        .error-message(v-if='formDataErrors.termsAccepted != "ok"')
+            span.text-danger {{ formDataErrors.termsAccepted }}
     .submit-wrapper
         CButton(type='submit', @click="validateForm", :text='$t("contact.form.send")', customClass='primary')
 </template>
@@ -71,15 +74,15 @@ const formData = ref<ContactForm>({
   via: '',
   otherVia: '',
   message: '',
-  accept: null,
+  termsAccepted: null,
 })
 
 const formDataErrors = ref<Record<string, string>>({
-  name: 'ok',
-  email: 'ok',
-  via: 'ok',
-  message: 'ok',
-  accept: 'ok',
+  name: '',
+  email: '',
+  via: '',
+  message: '',
+  termsAccepted: '',
 })
 
 const emailPlaceholder = computed(() => {
@@ -100,20 +103,19 @@ async function submitForm() {
     if (response.status === 200) {
       Swal.fire({
         title: t('contact.form.modal-title-sc'),
-        text: t('contact.form.modal-text-sc')!,
+        text: response.data.message,
         icon: 'success',
         confirmButtonText: t('contact.form.modal-confirm-btn'),
       })
       resetForm()
     }
-
-    // const data = await response.json();
-    // responseMessage.value = data.message;
-  } catch (error) {
-    responseMessage.value = 'Error sending the form.'
+  } catch (error: any) {
+    const errorMessage = error.response.data.error
+      ? error.response.data.error
+      : t('contact.form.modal-text-err')
     Swal.fire({
       title: t('contact.form.modal-title-err'),
-      text: t('contact.form.modal-text-err')!,
+      text: errorMessage,
       icon: 'error',
       confirmButtonText: t('contact.form.modal-confirm-btn'),
     })
@@ -122,12 +124,12 @@ async function submitForm() {
 }
 
 function validateForm() {
-  const { name, email, via, message, accept } = formData.value
+  const { name, email, via, message, termsAccepted } = formData.value
   validateName(name)
   validateEmail(email)
   validateVia(via)
   validateMessage(message)
-  validateAccept(accept)
+  validateAccept(termsAccepted)
 
   const allOk = Object.values(formDataErrors.value).every((value) => value === 'ok')
   if (allOk) {
@@ -159,9 +161,10 @@ function validateMessage(msg: string) {
   else formDataErrors.value.message = 'ok'
 }
 
-function validateAccept(acc: string | null) {
-  if (acc === null || false) formDataErrors.value.accept = t('contact.form.terms-error')
-  else formDataErrors.value.accept = 'ok'
+function validateAccept(acc: string | null | boolean) {
+  if (acc === null || acc === false)
+    formDataErrors.value.termsAccepted = t('contact.form.terms-error')
+  else formDataErrors.value.termsAccepted = 'ok'
 }
 
 function resetForm() {
@@ -171,14 +174,14 @@ function resetForm() {
     via: '',
     otherVia: '',
     message: '',
-    accept: null,
+    termsAccepted: null,
   }
   formDataErrors.value = {
-    name: 'ok',
-    email: 'ok',
-    via: 'ok',
-    message: 'ok',
-    accept: 'ok',
+    name: '',
+    email: '',
+    via: '',
+    message: '',
+    termsAccepted: '',
   }
 }
 </script>

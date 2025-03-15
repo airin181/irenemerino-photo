@@ -19,6 +19,7 @@
     "@mdi/js": "^7.4.47",
     "axios": "^1.8.3",
     "dompurify": "^3.2.4",
+    "js-cookie": "^3.0.5",
     "pinia": "^2.3.1",
     "sweetalert2": "^11.17.2",
     "vue": "^3.5.13",
@@ -28,6 +29,7 @@
   },
   "devDependencies": {
     "@tsconfig/node22": "^22.0.0",
+    "@types/js-cookie": "^3.0.6",
     "@types/jsdom": "^21.1.7",
     "@types/node": "^22.13.8",
     "@vitejs/plugin-vue": "^5.2.1",
