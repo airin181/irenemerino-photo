@@ -47,7 +47,7 @@ form.contact-form(@submit.prevent="validateForm")
         .error-message(v-if='formDataErrors.termsAccepted != "ok"')
             span.text-danger {{ formDataErrors.termsAccepted }}
     .submit-wrapper
-        CButton(type='submit', @click="validateForm", :text='$t("contact.form.send")', customClass='primary')
+        CButton(type='submit', :text='$t("contact.form.send")', customClass='primary')
 </template>
 <script setup lang="ts">
 import type { ContactForm } from '@/types/_types'
