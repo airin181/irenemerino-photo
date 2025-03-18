@@ -26,7 +26,7 @@ export default defineConfig({
       'cute-lemons-brush.loca.lt',
       'localhost',
       '0.0.0.0',
-      'irenemerino-photo-back.onrender.com',
+      // 'irenemerino-photo-back.onrender.com',
     ],
   },
 })
