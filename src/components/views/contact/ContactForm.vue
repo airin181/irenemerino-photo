@@ -53,7 +53,6 @@ form.contact-form(@submit.prevent="validateForm")
 import type { ContactForm } from '@/types/_types'
 import { computed, ref } from 'vue'
 import CButton from '@/components/common/CButton.vue'
-// import FormGroup from './FormGroup.vue'
 import { useI18n } from 'vue-i18n'
 import { useLangStore } from '@/stores/lang'
 import Swal from 'sweetalert2'

@@ -26,7 +26,7 @@ import img1 from '@images/photos/not-found.jpg'
 import img2 from '@images/photos/img-parallax-2.jpg'
 import img3 from '@images/photos/img-parallax-3.jpg'
 
-const apiUrl = ref<string>(`${import.meta.env.VITE_APP_API_URL}/get-instagram-feed`)
+const apiUrl = ref<string>(`${import.meta.env.VITE_APP_API_URL}/api/get-instagram-feed`)
 
 const isLoading = ref<boolean>(true)
 const hasError = ref<boolean>(false)
