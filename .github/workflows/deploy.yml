@@ -13,7 +13,7 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Set environment variables
-        run: echo "VITE_APP_API_URL=${{ vars.VITE_APP_API_URL }}" >> $GITHUB_ENV
+        run: echo "VITE_API_URL=${{ vars.VITE_API_URL }}" >> $GITHUB_ENV
       - name: Build project
         run: npm run build
       - name: Add .nojekyll file to prevent Jekyll processing

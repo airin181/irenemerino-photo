@@ -8,9 +8,6 @@ import path from 'path'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [vue(), vueDevTools()],
-  define: {
-    'import.meta.env.VITE_APP_API_URL': JSON.stringify(process.env.VITE_APP_API_URL || ''),
-  },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
