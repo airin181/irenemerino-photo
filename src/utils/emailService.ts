@@ -4,9 +4,9 @@ const apiUrl = import.meta.env.__VITE_APP_API_URL__
   ? `${import.meta.env.__VITE_APP_API_URL__}/api/send-email`
   : import.meta.env.VITE_HOST
     ? `${import.meta.env.VITE_HOST}/send-email`
-    : ''
+    : 'paco'
 
-export async function sendEmail(emailData: ContactForm) {
+export async function sendEmail(emailData: ContactForm, url = apiUrl) {
   try {
     console.log('📡 Sending request to:', apiUrl)
     const response = await axios.post(apiUrl, emailData, {
