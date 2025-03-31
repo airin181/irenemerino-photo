@@ -66,8 +66,6 @@ const loading = ref<boolean>(false)
 
 const emailEs = ref('nombre@ejemplo.com')
 const emailEn = ref('name@example.com')
-const emailServiceUrl = import.meta.env.__VITE_APP_API_URL__ || 'tostustuuuus'
-const paco = import.meta
 
 const formData = ref<ContactForm>({
   name: '',
@@ -99,7 +97,7 @@ const isOtherOption = computed(() => {
 async function submitForm() {
   loading.value = true
   try {
-    const response = await sendEmail(formData.value, emailServiceUrl)
+    const response = await sendEmail(formData.value)
     localStorage.setItem('contact-form', JSON.stringify(formData.value))
     if (response.status === 200) {
       Swal.fire({

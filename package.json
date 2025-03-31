@@ -6,10 +6,9 @@
   "scripts": {
     "dev": "vite",
     "deploy": "npm run build && gh-pages -d dist",
-    "build": "run-p type-check \"build-only {@}\" --",
+    "build": "vite build --mode production",
     "preview": "vite preview",
     "test:unit": "vitest",
-    "build-only": "vite build",
     "type-check": "vue-tsc --build",
     "lint": "eslint . --fix",
     "format": "prettier --write src/"
