@@ -29,4 +29,7 @@ export default defineConfig({
       'irenemerino-photo-back.onrender.com',
     ],
   },
+  define: {
+    'process.env': {},
+  },
 })
