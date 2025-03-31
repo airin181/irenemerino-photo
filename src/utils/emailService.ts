@@ -7,11 +7,6 @@ const apiUrl = import.meta.env.VITE_APP_API_URL
     : ''
 
 export async function sendEmail(emailData: ContactForm) {
-  if (!apiUrl) {
-    console.error('❌ Error: API_URL is not defined.')
-    return
-  }
-
   try {
     const response = await axios.post(apiUrl, emailData, {
       withCredentials: true,
