@@ -19,7 +19,7 @@
           source(:src="image.media_url" type="video/mp4")
 </template>
 <script setup lang="ts">
-import { ref, onMounted, watch, computed } from 'vue'
+import { ref, onMounted, computed } from 'vue'
 import axios from 'axios'
 import PulseLoader from 'vue-spinner/src/PulseLoader.vue'
 import img1 from '@images/photos/not-found.jpg'

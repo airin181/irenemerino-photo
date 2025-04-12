@@ -4,7 +4,6 @@ const apiUrl = import.meta.env.VITE_APP_API_URL + '/api/send-email'
 
 export async function sendEmail(emailData: ContactForm) {
   try {
-    console.log('📡 Sending request to:', apiUrl)
     const response = await axios.post(apiUrl, emailData, {
       withCredentials: true,
       headers: { 'Content-Type': 'application/json' },
