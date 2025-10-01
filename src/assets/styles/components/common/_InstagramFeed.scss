@@ -1,7 +1,9 @@
 @use '@styles/variables/colors' as color;
+@use '@styles/mixins/media_queries' as *;
 .instagram-wrapper {
   display: flex;
   justify-content: center;
+
   .v-spinner {
     padding: 4rem;
   }
@@ -9,6 +11,10 @@
     display: flex;
     flex-wrap: wrap;
     padding-top: 1rem;
+    justify-content: center;
+    @include respond(lg) {
+      justify-content: unset;
+    }
     .instagram-gallery-item {
       display: flex;
       flex-direction: column;
@@ -21,6 +27,17 @@
         width: 100%;
         height: auto;
         object-fit: cover;
+      }
+    }
+  }
+  .instagram-alternative {
+    &.instagram-gallery {
+      .instagram-gallery-item {
+        flex-direction: row;
+        flex: unset;
+        width: 18rem;
+        height: 18rem;
+        cursor: unset;
       }
     }
   }

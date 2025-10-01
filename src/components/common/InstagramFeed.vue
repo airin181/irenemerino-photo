@@ -1,7 +1,7 @@
 <template lang="pug">
 .instagram-wrapper
   PulseLoader(v-if="isLoading")
-  .instagram-alternative.instagram-gallery(v-else-if="hasError")
+  .instagram-gallery.instagram-alternative(v-else-if="hasError")
     .instagram-gallery-item(v-for="image in noInstagramImages")
       img.instagram-gallery-image(:src='image.path')
 
@@ -19,14 +19,14 @@
           source(:src="image.media_url" type="video/mp4")
 </template>
 <script setup lang="ts">
-import { ref, onMounted, watch, computed } from 'vue'
+import { ref, onMounted, computed } from 'vue'
 import axios from 'axios'
 import PulseLoader from 'vue-spinner/src/PulseLoader.vue'
-import img1 from '@images/photos/not-found.jpg'
-import img2 from '@images/photos/img-parallax-2.jpg'
-import img3 from '@images/photos/img-parallax-3.jpg'
+import img1 from '@/assets/images/photos/not-found.jpg'
+import img2 from '@/assets/images/photos/img-parallax-2.jpg'
+import img3 from '@/assets/images/photos/img-parallax-3.jpg'
 
-const apiUrl = ref<string>(`${import.meta.env.VITE_APP_API_URL}/get-instagram-feed`)
+const apiUrl = ref<string>(`${import.meta.env.VITE_APP_API_URL}/api/get-instagram-feed`)
 
 const isLoading = ref<boolean>(true)
 const hasError = ref<boolean>(false)
@@ -52,8 +52,10 @@ const noInstagramImages = computed(() => {
 // Function to fetch Instagram feed
 const getInstagramFeed = async () => {
   try {
+    isLoading.value = true
     const response = await axios.get(apiUrl.value) // Solicita datos al backend
     instagramData.value = response.data // Asigna los datos recibidos al estado
+    console.log(import.meta.env.VITE_APP_API_URL, apiUrl.value)
   } catch (err) {
     console.error('Error al obtener el feed:', err)
     hasError.value = true

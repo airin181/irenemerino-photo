@@ -4,5 +4,5 @@ export interface ContactForm {
   via: string
   otherVia: string
   message: string
-  accept: null | string
+  termsAccepted: null | string
 }

@@ -22,6 +22,14 @@ export default defineConfig({
     outDir: 'dist',
   },
   server: {
-    allowedHosts: ['cute-lemons-brush.loca.lt', 'localhost', '0.0.0.0'],
+    allowedHosts: [
+      'cute-lemons-brush.loca.lt',
+      'localhost',
+      '0.0.0.0',
+      'irenemerino-photo-back.onrender.com',
+    ],
+  },
+  define: {
+    'process.env': {},
   },
 })
