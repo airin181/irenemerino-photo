@@ -19,53 +19,53 @@
           source(:src="image.media_url" type="video/mp4")
 </template>
 <script setup lang="ts">
-import { ref, onMounted, computed } from 'vue'
-import axios from 'axios'
-import PulseLoader from 'vue-spinner/src/PulseLoader.vue'
-import img1 from '@/assets/images/photos/not-found.jpg'
-import img2 from '@/assets/images/photos/img-parallax-2.jpg'
-import img3 from '@/assets/images/photos/img-parallax-3.jpg'
+import { ref, onMounted, computed } from 'vue';
+import axios from 'axios';
+import PulseLoader from 'vue-spinner/src/PulseLoader.vue';
+import img1 from '@/assets/images/photos/not-found.jpg';
+import img2 from '@/assets/images/photos/img-parallax-2.jpg';
+import img3 from '@/assets/images/photos/img-parallax-3.jpg';
 
-const apiUrl = ref<string>(`${import.meta.env.VITE_APP_API_URL}/api/get-instagram-feed`)
+const apiUrl = ref<string>(`${import.meta.env.VITE_API_URL}/api/get-instagram-feed`);
 
-const isLoading = ref<boolean>(true)
-const hasError = ref<boolean>(false)
-const instagramData = ref(null)
+const isLoading = ref<boolean>(true);
+const hasError = ref<boolean>(false);
+const instagramData = ref(null);
 
 const noInstagramImages = computed(() => {
-  return [
-    {
-      path: img1,
-      id: 'not-found',
-    },
-    {
-      path: img2,
-      id: 'img-parallax-2',
-    },
-    {
-      path: img3,
-      id: 'img-parallax-3',
-    },
-  ]
-})
+    return [
+        {
+            path: img1,
+            id: 'not-found',
+        },
+        {
+            path: img2,
+            id: 'img-parallax-2',
+        },
+        {
+            path: img3,
+            id: 'img-parallax-3',
+        },
+    ];
+});
 
 // Function to fetch Instagram feed
 const getInstagramFeed = async () => {
-  try {
-    isLoading.value = true
-    const response = await axios.get(apiUrl.value) // Solicita datos al backend
-    instagramData.value = response.data // Asigna los datos recibidos al estado
-    console.log(import.meta.env.VITE_APP_API_URL, apiUrl.value)
-  } catch (err) {
-    console.error('Error al obtener el feed:', err)
-    hasError.value = true
-  } finally {
-    isLoading.value = false
-  }
-}
+    try {
+        isLoading.value = true;
+        const response = await axios.get(apiUrl.value); // Solicita datos al backend
+        instagramData.value = response.data; // Asigna los datos recibidos al estado
+        console.log(import.meta.env.VITE_API_URL, apiUrl.value);
+    } catch (err) {
+        console.error('Error al obtener el feed:', err);
+        hasError.value = true;
+    } finally {
+        isLoading.value = false;
+    }
+};
 
 // Fetch Instagram feed when the component is mounted
 onMounted(() => {
-  getInstagramFeed()
-})
+    getInstagramFeed();
+});
 </script>
