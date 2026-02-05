@@ -2,18 +2,28 @@ import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import NotFound from '@/views/NotFound.vue'
 const routes: RouteRecordRaw[] = [
-<<<<<<< Updated upstream
   {
     path: '/',
     name: 'home',
     component: HomeView,
   },
   {
-    path: '/gallery',
-    name: 'gallery',
+    path: '/projects',
     redirect: { name: 'coming-soon' },
-    component: () => import('@/views/GalleryView.vue'),
-    children: [],
+    // name: 'projects',
+    // component: () => import('@/views/ProjectsView.vue'),
+    // children: [
+    //   {
+    //     path: 'archive',
+    //     name: 'archive',
+    //     component: () => import('@/views/GalleryView.vue'),
+    //   },
+    //   {
+    //     path: 'work',
+    //     name: 'work',
+    //     component: () => import('@/views/GalleryView.vue'),
+    //   },
+    // ],
   },
   {
     path: '/shop',
@@ -34,7 +44,7 @@ const routes: RouteRecordRaw[] = [
   },
 ]
 const router = createRouter({
-  history: createWebHistory('/irenemerino-photo/'),
+  history: createWebHistory('/'),
   routes,
 })
 
@@ -43,58 +53,6 @@ const unknown = {
   path: '/:pathMatch(.*)*',
   component: NotFound,
 }
-=======
-    {
-        path: '/',
-        name: 'home',
-        component: HomeView,
-    },
-    {
-        path: '/projects',
-        // name: 'projects',
-        // component: () => import('@/views/ProjectsView.vue'),
-        children: [
-            {
-                path: 'archive',
-                name: 'archive',
-                component: () => import('@/views/projects/ArchiveGallery.vue'),
-            },
-            {
-                path: 'work',
-                name: 'work',
-                component: () => import('@/views/projects/WorkGallery.vue'),
-            },
-        ],
-    },
-    {
-        path: '/shop',
-        name: 'shop',
-        redirect: { name: 'coming-soon' },
-        component: () => import('@/views/ShopView.vue'),
-        children: [],
-    },
-    {
-        path: '/contact',
-        name: 'contact',
-        component: () => import('@/views/ContactView.vue'),
-    },
-    {
-        path: '/coming-soon',
-        name: 'coming-soon',
-        component: () => import('@/views/ComingSoon.vue'),
-    },
-];
-const router = createRouter({
-    history: createWebHistory('/'),
-    routes,
-});
-
-// Unknown Routes
-const unknown = {
-    path: '/:pathMatch(.*)*',
-    component: NotFound,
-};
->>>>>>> Stashed changes
 // Add Additional Routes
 router.addRoute(unknown)
 

@@ -15,10 +15,10 @@ export const useMenuStore = defineStore('menu', () => {
         pathName: 'shop',
         text: t('nav.shop'),
       },
-      {
-        pathName: 'gallery',
-        text: t('nav.gallery'),
-      },
+      // {
+      //   pathName: 'gallery',
+      //   text: t('nav.gallery'),
+      // },
       {
         pathName: 'contact',
         text: t('nav.contact'),
